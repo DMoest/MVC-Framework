@@ -1,4 +1,4 @@
-# MVC Course 2021
+# MVC Course - PHP Frameworks 2021
 
 Repository for the course MVC at Bleking Institute of Technologies.
 
@@ -9,28 +9,29 @@ Course pages for all the exercises and assignments made in this repository are p
 
 All information supporting this course is created by the DB-webb team, a part of the faculty at BTH. For further information please checkout the website.
 
-This part of the course introduces frameworks for PHP programming. My intentions are to learn the basics of Laravel
+This part of the course introduces frameworks for PHP programming and a few things more for web application development. 
+My intentions are to learn the basics of Laravel and other included stuff in the course. 
+Notice the tags starts at v.4.0.0, this is intended to say its part 4 in the course MVC. 
+If you are interested in the previous work done for this course you will find them in [this repository](https://github.com/DMoest/MVC).
 
 * * *
 
 ### Check out the application:
 1.  Clone the repository.
 
-2.  Make sure you have the latest version of `Composer` and `Make` installed on your local machine.
-    To check run the following commands:  
-    For Composer, run `which composer` and `composer --version`.  
-    For Make, run `which make` and `make --version`.  
-    If eather one or both are not installed, make sure to install them.
+2.  Make sure you have the latest version of `Composer` installed on your local machine.
+    To check your version of `Composer` run the following commands:  
+    For Composer, run `which composer` and `composer --version`.
+    If not installed, make sure to install it.
+    
+3.  Install dependencies declared for the project in `composer.json`. Run the command `composer install`.
 
-3.  Install the autoloader:
-    Move to the root of the folder `game/`.  
-    Run the command `composer install --no-dev`.
+4.  Navigate to the project root `app/` through your command line terminal. 
+    Make sure cache for the routes are build with `php artisan optimize`.
+    
+5.  Start a local webserver with the command `php artisan serve` and run the application your preferred browser at `localhost:8000/`.
 
-4.  Install other project dependencies:
-    Stay in the `game/` folder and run the command `make install`.  
-    In case you already installed the project and wish for a fresh install, run `make clean-all install`.
-
-5.  Start a local webserver and start the application from the folder `game/htdocs/` in your preferred browser.
+6.  You should be good to go, enjoy!
 
 * * *
 
