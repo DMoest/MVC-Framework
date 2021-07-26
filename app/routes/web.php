@@ -54,7 +54,7 @@ Route::get('/form/view', [FormController::class, 'view']);
  */
 Route::get('/diceGame21_init', function() {
     return view('diceGame21_init', [
-        'header' => "DiceGame21 - INITIALIZATION",
+        'header' => "DiceGame21 - A game of dice21 starts here.",
         'message' => "You are at route GET /diceGame21_init. Start a game DiceGame21 from here..."
     ]);
 });
@@ -66,7 +66,6 @@ Route::post('/diceGame21_init', function() {
 //        'message' => "You are at route POST /diceGame21_init. Process start of a DiceGame21 from here..."
 //    ]);
 });
-
 
 
 Route::get('/diceGame21', function() {
@@ -85,22 +84,20 @@ Route::post('/diceGame21', function() {
 });
 
 
-
-Route::get('/diceGame21_select', function() {
-    return view('diceGame21_select', [
-        'header' => "DiceGame21 - VIEW FOR PLAYERS TO SELECT SCORES IN DiceGame21",
-        'message' => "You are at route GET /diceGame21_select. This is the main route for playing the game DiceGame21..."
+Route::get('/diceGame21_result', function() {
+    return view('diceGame21_result', [
+        'header' => "DiceGame21 - VIEW FOR DiceGame21 RESULTS",
+        'message' => "You are at route GET /diceGame21_result. This is the main route for playing the game DiceGame21..."
     ]);
 });
 
-Route::post('/diceGame21_select', function() {
+Route::post('/diceGame21_result', function() {
 //    process things here...
 //    return view('diceGame21', [
-//        'header' => "DiceGame21 - ROUTE TO PROCESS SELECTION OF SAVING SCORES FOR DiceGame21",
-//        'message' => "You are at route POST /diceGame21_select. Process saving scores for player of DiceGame21 here..."
+//        'header' => "DiceGame21 - ROUTE TO PROCESS RESULTS FOR DiceGame21",
+//        'message' => "You are at route POST /diceGame21_result. Process saving scores for player of DiceGame21 here..."
 //    ]);
 });
-
 
 
 Route::get('/diceGame21_result', function() {
@@ -125,8 +122,64 @@ Route::post('/diceGame21_result', function() {
  * --------------------------------------------------
  */
 Route::get('/yatzy_init', function () {
-    return view('yatzy_init', function() {
-        'header' => "Yatzy - ",
-        'message' => "",
-    });
+    return view('yatzy_init', [
+        'header' => "Yatzy - A game of yatzy starts here",
+        'message' => "You are at route GET /yatzy_init. This is the render view route for Yatzy...",
+    ]);
+});
+
+Route::post('/yatzy_init', function() {
+//    process things here...
+//    return view('yatzy', [
+//        'header' => "Yatzy - ROUTE TO PROCESS Yatzy",
+//        'message' => "You are at route POST /yatzy_init. Process actions for Yatzy here..."
+//    ]);
+});
+
+
+Route::get('/yatzy', function () {
+    return view('yatzy', [
+        'header' => "Yatzy - Main view",
+        'message' => "You are at route GET /yatzy. This is the render main view route for Yatzy...",
+    ]);
+});
+
+Route::post('/yatzy', function() {
+//    process things here...
+//    return view('yatzy', [
+//        'header' => "Yatzy - ROUTE TO PROCESS Yatzy",
+//        'message' => "You are at route POST /yatzy. Process actions for Yatzy here..."
+//    ]);
+});
+
+
+Route::get('/yatzy_select', function () {
+    return view('yatzy', [
+        'header' => "Yatzy - Select scores view",
+        'message' => "You are at route GET /yatzy_select. This is the render view route for Yatzy players to select scores...",
+    ]);
+});
+
+Route::post('/yatzy_select', function() {
+//    process things here...
+//    return view('yatzy', [
+//        'header' => "Yatzy - ROUTE TO PROCESS Yatzy",
+//        'message' => "You are at route POST /yatzy_select. Process actions for Yatzy here..."
+//    ]);
+});
+
+
+Route::get('/yatzy_result', function () {
+    return view('yatzy', [
+        'header' => "Yatzy - Result view",
+        'message' => "You are at route GET /yatzy_result. This is the render view route for Yatzy results...",
+    ]);
+});
+
+Route::post('/yatzy_result', function() {
+//    process things here...
+//    return view('yatzy', [
+//        'header' => "Yatzy - ROUTE TO PROCESS Yatzy",
+//        'message' => "You are at route POST /yatzy_result. Process actions for Yatzy here..."
+//    ]);
 });
