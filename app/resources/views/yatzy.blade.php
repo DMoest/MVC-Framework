@@ -1,3 +1,9 @@
-<p>{{ $header  }}</p>
+{{--    för utskrift utan 'escape', html hantering {!! !!}     --}}
 
-<p>{{ $message }}</p>
+@extends ('layouts.layout_yatzy')
+
+@section('content')
+    <p>{{ $header  }}</p>
+
+    <p>{{ $message }}</p>
+@endsection

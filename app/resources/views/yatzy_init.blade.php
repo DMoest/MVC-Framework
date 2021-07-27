@@ -1,3 +1,9 @@
-<p>{{ $header  }}</p>
+@extends('layouts.layout_yatzy')
 
-<p>{{ $message }}</p>
+@section('content')
+
+    <p>{{ $header  }}</p>
+
+    <p>{{ $message }}</p>
+
+@endsection

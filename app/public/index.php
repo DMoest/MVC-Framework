@@ -2,8 +2,17 @@
 
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
+//use Whoops\Handler\PrettyPageHandler;
+//use Whoops\Run;
+
 
 define('LARAVEL_START', microtime(true));
+
+
+//$whoops = new Run;
+//$whoops->pushHandler(new PrettyPageHandler);
+//$whoops->register();
+
 
 /*
 |--------------------------------------------------------------------------
