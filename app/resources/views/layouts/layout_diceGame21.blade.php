@@ -1,3 +1,11 @@
-@yield('header')
+{{-- DOCUMENT START --}}
+@include('components.document')
+
+{{-- PAGE HEADER --}}
+@include('components.header')
+
+{{-- PAGE CONTENT --}}
 @yield('content')
-@yield('footer')
+
+{{-- PAGE FOOTER --}}
+@include('components.footer')
