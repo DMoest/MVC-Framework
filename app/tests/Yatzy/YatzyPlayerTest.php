@@ -6,7 +6,7 @@ declare(strict_types=1);
 /**
  * Namespace declared and others in use.
  */
-namespace daap19\Yatzy;
+namespace Daap19\Yatzy;
 use PHPUnit\Framework\TestCase;
 
 

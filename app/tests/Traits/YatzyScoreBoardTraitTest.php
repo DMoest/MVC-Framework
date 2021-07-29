@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace daap19\Yatzy;
+namespace Daap19\Yatzy;
 
 use PHPUnit\Framework\TestCase;
 

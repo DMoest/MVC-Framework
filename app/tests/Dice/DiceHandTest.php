@@ -2,9 +2,10 @@
 
 declare(strict_types=1);
 
-namespace daap19\Dice;
-
+namespace Daap19\Dice;
 use PHPUnit\Framework\TestCase;
+
+
 
 /**
  * Test cases for Dice class.
@@ -109,7 +110,7 @@ class DiceHandTest extends TestCase
 
 
     /**
-     * @description 
+     * @description
      */
     final public function testDiceHandRoll(): void
     {

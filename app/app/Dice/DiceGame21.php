@@ -29,12 +29,8 @@ class DiceGame21
      * @param int $credit as the amount of credit the player start with.
      * @param bool $machine as a indicator a player should be played by the machine.
      */
-    public function __construct(int $numOfPlayers = 2, int $credit = 25, bool $machine)
+    public function __construct(int $numOfPlayers = 2, int $credit = 25, bool $machine = true)
     {
-        /**
-         * Setup computer player
-         * @description Setup computer controlled player if variable validates to boolean true else if false only user players.
-         */
         if (intval($machine) === 1) {
 
             for ($i = 0; $i < $numOfPlayers -1; $i++) {

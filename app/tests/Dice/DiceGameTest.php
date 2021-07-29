@@ -6,9 +6,10 @@ declare(strict_types=1);
 /**
  * Namespace declared and others in use.
  */
-namespace daap19\UnitTests;
-use \daap19\Dice\DiceGame21;
+namespace Daap19\UnitTests;
+use \Daap19\Dice\DiceGame21;
 use PHPUnit\Framework\TestCase;
+
 
 
 /**
