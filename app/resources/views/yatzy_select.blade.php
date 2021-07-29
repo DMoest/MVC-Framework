@@ -13,8 +13,6 @@
                 <div class="diceForm__graphicDices">
 
                     @foreach($graphicDices as $key => $value)
-
-                        <!-- Each graphic dice representation -->
                         <div class="dice-utf8 diceForm__graphicDices--selectionBox">
                             <i class="dice-utf8 {{ $value }}"></i>
                         </div>

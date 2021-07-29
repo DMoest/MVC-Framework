@@ -10,13 +10,11 @@
         <div class="diceForm__results">
             <h3>Current players score</h3>
 
-            <p>Last played hand from Player {{ $playerNumber }}
-            <!--Graphic Dices -->
+            <p>Last played hand from Player {{ $playerNumber }}</p>
             <p class="dice-utf8">
                 @foreach($graphicDices as $value)
-                <i class="{{ $value }}"></i>
+                    <i class="{{ $value }}"></i>
                 @endforeach
-            </p>
             </p>
 
             {{ $scoreBoard }}
