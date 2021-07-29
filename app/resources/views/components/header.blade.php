@@ -1,7 +1,9 @@
 @section('header')
+
     <header>
 
-        @include('components.navbar')
+        @yield('components.navbar')
 
     </header>
+
 @endsection

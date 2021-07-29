@@ -1,7 +1,6 @@
 @extends('layouts.layout_yatzy')
 
 
-
 @section('content')
 
     <form action="{{ $action  }}" method="POST" class="diceForm">

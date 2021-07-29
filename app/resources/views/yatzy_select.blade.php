@@ -1,5 +1,6 @@
 @extends ('layouts.layout_yatzy')
 
+
 @section('content')
 
     <form method="post" action="{{ $action }}" class="yatzyForm">
