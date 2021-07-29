@@ -1,0 +1,82 @@
+.dice {
+  font-size: 32px;
+
+
+  &-utf8 {
+    font-size: 32px;
+  }
+
+
+  /**
+   * CSS sprite for a dice with six faces.
+   */
+  &-sprite {
+    display: inline-block;
+    padding: 0;
+    margin: 0 4px 0 0;
+    width: 32px;
+    height: 32px;
+    font-style: normal;
+    background: url(./../../img/dice-faces.jpg) no-repeat;
+  }
+
+
+  /**
+   * Style a dice using UTF-8 characters.
+   */
+  &-1 {
+    font-style: normal;
+
+    &::after {
+      content: "\2680";
+    }
+  }
+
+  &-2 {
+    font-style: normal;
+
+    &::after {
+      content: "\2681";
+    }
+  }
+
+  &-3 {
+    font-style: normal;
+
+    &::after {
+      content: "\2682";
+    }
+  }
+
+  &-4 {
+    font-style: normal;
+
+    &::after {
+      content: "\2683";
+    }
+  }
+
+  &-5 {
+    font-style: normal;
+
+    &::after {
+      content: "\2684";
+    }
+  }
+
+  &-6 {
+    font-style: normal;
+
+    &::after {
+      content: "\2685";
+    }
+  }
+}
+
+
+.dice-sprite.dice-1 { background-position: -160px 0; }
+.dice-sprite.dice-2 { background-position: -128px 0; }
+.dice-sprite.dice-3 { background-position: -96px 0; }
+.dice-sprite.dice-4 { background-position: -64px 0; }
+.dice-sprite.dice-5 { background-position: -32px 0; }
+.dice-sprite.dice-6 { background-position: 0 0; }
