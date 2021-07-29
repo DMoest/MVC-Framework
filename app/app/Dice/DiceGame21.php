@@ -4,6 +4,7 @@
  * Namespace declared and others in use.
  */
 namespace Daap19\Dice;
+use Daap19\Traits\ScoreBoardTrait;
 
 
 
