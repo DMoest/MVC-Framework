@@ -17,7 +17,7 @@
                 @endforeach
             </p>
 
-            {{ $scoreBoard }}
+            {!! $scoreBoard !!}
         </div>
 
         <div class="diceForm__submit--container">
