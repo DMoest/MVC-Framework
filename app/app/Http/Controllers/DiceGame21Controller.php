@@ -32,7 +32,7 @@ class DiceGame21Controller extends Controller
             "action" => url("/dice/init/process"),
         ];
 
-        return view("dice_init", $data);
+        return view("diceGame21_init", $data);
     }
 
 
@@ -71,7 +71,26 @@ class DiceGame21Controller extends Controller
      */
     final public function viewMain(): View
     {
+        $diceGame = session()->get("diceGame21");
+        $players = $diceGame->getPlayers();
+        $playerIndex = $diceGame->getPlayerIndex();
+        $player = $players[$playerIndex];
+        $credit = $player->getCredit();
 
+        $data = [
+            "header" => "Dice DiceGame 21",
+            "message" => "DiceGame on, roll them dices!",
+            "action" => url("/dice/process"),
+            "round" => $diceGame->getRound(),
+            "players" => $diceGame->getPlayers(),
+            "score" => $player->getSumTotal(),
+            "credit" => $credit,
+            "numberOfPlayers" => count($diceGame->getPLayers()),
+            "playerNumber" => $diceGame->getPlayerIndex() +1,
+            "scoreBoard" => $diceGame->printDiceScoreBoard(),
+        ];
+
+        return view("diceGame21", $data);
     }
 
 
@@ -83,7 +102,19 @@ class DiceGame21Controller extends Controller
      */
     final public function processMain(Request $request): RedirectResponse
     {
+        $input = $request->all();
+        $diceGame = session()->get("diceGame21");
 
+        /* Catch POST request from dice__init form and store values to SESSION variable */
+        $dices = intval($input["dices"]) ?? null;
+        $submit = strval($input["submit"]) ?? null;
+
+        /* Play game */
+        $diceGame->playGame($dices, $submit);
+//        $scoreBoard = $diceGame->printDiceScoreBoard();
+
+        // Return the redirect through parent class ControllerBase
+        return redirect(url("/dice/result/view"));
     }
 
 
@@ -108,8 +139,9 @@ class DiceGame21Controller extends Controller
             "scoreBoard" => $diceGame->printDiceScoreBoard(),
         ];
 
-        return view("layout/dice/result/view.php", $data);
+        return view("diceGame21_result", $data);
     }
+
 
 
     /**
