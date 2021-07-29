@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HelloWorldController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\YatzyController;
+use App\Http\Controllers\DiceGame21Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,3 +72,11 @@ Route::post('yatzy/result/process', [YatzyController::class, 'processResult']);
  * DiceGame21 routes
  * --------------------------------------------------
  */
+Route::get('dice/init/view', [DiceGame21Controller::class, 'viewInit']);
+Route::post('dice/init/process', [DiceGame21Controller::class, 'processInit']);
+
+Route::get('dice/view', [DiceGame21Controller::class, 'viewMain']);
+Route::post('dice/process', [DiceGame21Controller::class, 'processMain']);
+
+Route::get('dice/result/view', [DiceGame21Controller::class, 'viewResult']);
+Route::post('dice/result/process', [DiceGame21Controller::class, 'processResult']);
