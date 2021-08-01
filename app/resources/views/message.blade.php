@@ -1,3 +1,9 @@
-<p>The message is:</p>
+<x-layout>
+    <x-section>
 
-<p>{{ $message }}</p>
+        <p>The message is:</p>
+
+        <p>{{ $message }}</p>
+
+    </x-section>
+</x-layout>

@@ -1,13 +1,20 @@
-<html>
+<x-layout>
+    <x-section>
 
-<p>The message is:</p>
+        <html>
 
-@if (session('message'))
-    <div class="alert alert-success">
-        {{ session('message') }}
-    </div>
-@else
-    <p>Empty message.</p>
-@endif
+        <p>The message is:</p>
 
-<p>Do it again <a href="{{ url('/form') }}">at this url</a>.</p>
+        @if (session('message'))
+            <div class="alert alert-success">
+                {{ session('message') }}
+            </div>
+        @else
+            <p>Empty message.</p>
+        @endif
+
+        <p>Do it again <a href="{{ url('/form') }}">at this url</a>.</p>
+
+    </x-section>
+</x-layout>
+

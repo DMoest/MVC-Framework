@@ -1,5 +1,12 @@
-<form method="post" action="{{ $action }}">
-@csrf
-    <p><input type="text" value="" name="message"></p>
-    <p><input type="submit" value="Press me" name="doit"></p>
-</form>
+<x-layout>
+    <x-section>
+
+        <form method="post" action="{{ $action }}">
+            @csrf
+            <p><input type="text" value="" name="message"></p>
+            <p><input type="submit" value="Press me" name="doit"></p>
+        </form>
+
+    </x-section>
+</x-layout>
+
