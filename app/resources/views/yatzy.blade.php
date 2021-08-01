@@ -1,46 +1,40 @@
-@extends ('layouts.layout_yatzy')
+<x-layout>
+    <x-section>
+        <x-form method="post"
+                action="{{ $action }}"
+                class="p-4 bg-gray-100 border-2 border-solid border-gray-400 rounded-sm mb-6">
 
+            <h2 class="font-header text-bold text-2xl mb-4">{{ $header  }}</h2>
+            <p class="pb-2">{{ $message }}</p>
+            <p class="pb-2">Round: {{ $round }}</p>
+            <p class="pb-2">Times player have rolled the dices: <b>{{ $playerRolls }}</b></p>
 
-@section('content')
-
-    <form method="post" action="{{ $action }}" class="diceForm">
-    @csrf
-
-        <p>{{ $header  }}</p>
-        <p>{{ $message }}</p>
-        <p>Round: {{ $round }}</p>
-        <p>Times player have rolled the dices: <b>{{ $playerRolls }}</b></p>
-
-        @if(isset($graphicDices))
-            <p class="diceForm__results"></p>
+            @if(isset($graphicDices))
                 <h3>Player {{ $playerNumber }} score</h3>
-                <div class="diceForm__graphicDices">
 
-                @foreach($graphicDices as $key => $value)
-                    <div class="diceForm__graphicDices--selectionBox">
-                    <i class="dice-utf8 {{ $value }}"></i>
+                <div class="w-80 flex flex-row justify-between">
+                    @foreach($graphicDices as $key => $value)
+                        <div class="flex flex-col justify-around">
+                            <i class="dice-utf8 {{ $value }}"></i>
 
-                    @if($playerRolls !== 3)
-                        <label>
-                        <input class="diceForm__input--checkbox" id="dice-{{ $key }}" name="dice-{{ $key }}" type="checkbox"/></label>
-                    @endif
+                            @if($playerRolls !== 3)
+                                <label  class="m-auto">
+                                    <input class="w-auto" id="dice-{{ $key }}" name="dice-{{ $key }}" type="checkbox"/></label>
+                            @endif
 
-                    </div>
-                @endforeach
+                        </div>
+                    @endforeach
 
                 </div>
-                <p><i>Select dices to keep at next throw of dices.</i></p>
-            </p>
-        @endif
 
-        <div class="diceForm__submit--container">
-            @if($playerRolls < 3)
-                <button class="diceForm__input--button diceForm__input--buttonSuccess" type="submit" name="submit" value="roll">Roll the dices</button>
-                <button class="diceForm__input--button diceForm__input--buttonDanger" type="submit" name="submit" value="stop">Stop</button>
-            @elseif($playerRolls === 3)
-                <button class="diceForm__input--button diceForm__input--buttonSuccess" type="submit" name="submit" value="selectScores">Select scores</button>
+                <p class="italic text-sm py-2">Select dices to keep at next throw of dices.</p>
             @endif
-        </div>
-    </form>
 
-@endsection
+            <div class="m-auto p-4 flex flex-row justify-around">
+                <button class="w-52 flex flex-row justify-around p-4 rounded-sm bg-green-400 uppercase font-link font-semibold hover:bg-green-300 hover:text-white" type="submit" name="submit" value="roll">Roll dices <i class="p-1 fas fa-dice"></i></button>
+                <button class="w-52 flex flex-row justify-around p-4 rounded-sm bg-red-400 uppercase font-link font-semibold hover:bg-red-300 hover:text-white" type="submit" name="submit" value="stop">Stop <i class="p-1 fas fa-hand-paper"></i></button>
+            </div>
+
+        </x-form>
+    </x-section>
+</x-layout>

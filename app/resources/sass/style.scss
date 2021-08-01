@@ -1,4 +1,16 @@
 // IMPORT SCSS-Directories:
+
+// Tailwind stuff
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Fontawsome
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
 // Abstracts folder
 @import "abstracts/variables";
 // Base folder

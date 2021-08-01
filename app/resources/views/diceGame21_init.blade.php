@@ -1,28 +1,27 @@
-@extends('layouts.layout_diceGame21')
+<x-layout>
+    <x-section>
+        <x-form method="post"
+              action="{{ $action }}"
+              class="p-4 bg-gray-100 border-2 border-solid border-gray-400 rounded-sm">
 
+            <h2 class="font-header text-bold text-2xl mb-4">{{ $header }}</h2>
+            <p class="pb-2">{{ $message }}</p>
 
-@section('content')
+            <label for="players" class="" >Number of players in range of 1-3 (excl. computer):
+                <input type="range" name="players" placeholder="players" min="1" max="3" value="1" class=""></label><br>
+            <p class="text-sm italic pb-2">This range is 1 to 3 and represents a value for number of players in the game.</p>
 
-<form method="post" action="{{ $action }}" class="diceForm">
-@csrf
+            <label for="credit" class="">Amount of BitCoins players staring with:
+                <input type="number" name="credit" placeholder="players starting credit" min="5" max="100" value="25" step="5" class="pb-2"></label><br>
 
-    <h2 class="diceForm__text--header">{{ $header }}</h2>
-    <p class="diceForm__text--paragraph">{{ $message }}</p>
-    <p>
-        <label class="diceForm__text--paragraph" for="players">Number of players in range of 1-5 (excl. computer):
-            <input class="diceForm__input--slider" type="range" name="players" placeholder="players" min="1" max="3" value="1"></label><br>
-    <p class="diceForm__text--paragraph">This range is 1 to 5 and represents a value for number of players in the game.</p>
+            <label for="machine" class="pb-2">Play against computer?
+                <input type="checkbox" name="machine" value="true" checked class=""/></label>
 
-    <label class="diceForm__text--paragraph" for="credit">Amount of BitCoins players staring with:
-        <input class="diceForm__input--slider" type="number" name="credit" placeholder="players starting credit" min="5" max="100" value="25" step="5"></label><br>
+            <div class="m-auto w-60 p-3 bg-blue-100 border-2 border-blue-200 text-center rounded-sm flex flex-row justify-around hover:bg-blue-200 hover:text-white">
+                <button type="submit" class="uppercase font-link font-semibold">Start game</button>
+                <i class="p-1 fas fa-play text-blue-600"></i>
+            </div>
 
-    <label class="diceForm__text--paragraph" for="machine">Play against computer?
-        <input class="diceForm__input--checkbox" type="checkbox" name="machine" value="true" checked/></label>
-    </p>
-
-    <div class="diceForm__submit--container">
-        <button class="diceForm__input--button diceForm__input--buttonLink" type="submit">Start game</button>
-    </div>
-</form>
-
-@endsection
+        </x-form>
+    </x-section>
+</x-layout>

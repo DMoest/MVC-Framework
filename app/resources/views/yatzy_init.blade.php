@@ -1,17 +1,16 @@
-@extends('layouts.layout_yatzy')
+<x-layout>
+    <x-section>
+        <x-form method="post"
+                action="{{ $action  }}"
+                class="p-4 bg-gray-100 border-2 border-solid border-gray-400 rounded-sm">
 
+            <h2 class="font-header text-bold text-2xl mb-4">{{ $header  }}</h2>
+            <p class="pb-2">{{ $message }}</p>
 
-@section('content')
+            <div class="m-auto flex flex-row justify-around">
+                <button class="w-60 p-3 bg-blue-100 border-2 border-blue-200 text-center rounded-sm uppercase font-link font-semibold hover:bg-blue-200 hover:text-white" type="submit">Start game</button>
+            </div>
 
-    <form action="{{ $action  }}" method="POST" class="diceForm">
-    @csrf
-
-        <h2 class="diceForm__text--header">{{ $header  }}</h2>
-        <p class="diceForm__text--paragraph">{{ $message }}</p>
-
-        <div class="diceForm__submit--container">
-            <button class="diceForm__input--button diceForm__input--buttonLink" type="submit">Start game</button>
-        </div>
-    </form>
-
-@endsection
+        </x-form>
+    </x-section>
+</x-layout>

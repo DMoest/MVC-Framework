@@ -1,33 +1,33 @@
-@extends ('layouts.layout_yatzy')
+<x-layout>
+    <x-section>
+        <x-form method="post"
+                action="{{ $action }}"
+                class="p-4 bg-gray-100 border-2 border-solid border-gray-400 rounded-sm mb-6">
 
+            <h2 class="font-header text-bold text-2xl mb-4">{{ $header }}</h2>
 
-@section('content')
+            @if (isset($graphicDices))
+                <div class="">
+                    <p class="pb-2">Player {{ $playerNumber }}</p>
 
-    <form method="post" action="{{ $action }}" class="yatzyForm">
-    @csrf
-        <h1>{{ $header }}</h1>
+                    <div class="w-60 flex flex-row justify-between">
+                        @foreach($graphicDices as $key => $value)
+                            <div class="dice-utf8 diceForm__graphicDices--selectionBox">
+                                <i class="dice-utf8 {{ $value }}"></i>
+                            </div>
+                        @endforeach
+                    </div>
 
-        @if (isset($graphicDices))
-            <div class="diceForm__results">
-                <h3>Player {{ $playerNumber }}</h3>
-                <div class="diceForm__graphicDices">
-
-                    @foreach($graphicDices as $key => $value)
-                        <div class="dice-utf8 diceForm__graphicDices--selectionBox">
-                            <i class="dice-utf8 {{ $value }}"></i>
-                        </div>
-                    @endforeach
-
+                    <p class="text-sm italic"><i>{{ $message }}</i></p>
+                    {!! $scoreSelection !!}
+                    <p>Players total score: <b></b>{{ $scoreSum }}</b></p>
                 </div>
-                <p><i>{{ $message }}</i></p>
-                {!! $scoreSelection !!}
-                <p>Players total score: <b></b>{{ $scoreSum }}</b></p>
+            @endif
+
+            <div class=" w-100 p-4">
+                <button class="w-60 m-auto flex flex-row justify-around p-4 rounded-sm bg-blue-200 uppercase font-link font-semibold hover:bg-blue-300 hover:text-white" type="submit" name="submit">Position points <i class="p-1 fas fa-cash-register"></i></button>
             </div>
-        @endif
 
-        <div class="diceForm__submit--container">
-            <button class="diceForm__input--button diceForm__input--buttonLink" type="submit" name="submit">Position points</button>
-        </div>
-    </form>
-
-@endsection
+        </x-form>
+    </x-section>
+</x-layout>

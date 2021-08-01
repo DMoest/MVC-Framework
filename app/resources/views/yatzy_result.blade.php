@@ -1,23 +1,26 @@
-@extends('layouts.layout_yatzy')
+<x-layout>
+    <x-section>
+        <x-form method="get"
+                action="{{ $action }}"
+                class="p-4 bg-gray-100 border-2 border-solid border-gray-400 rounded-sm mb-6">
 
+            <h1 class="font-header text-bold text-2xl mb-4">{{ $header }}</h1>
+            <p class="pb-2 italic text-sm">{{ $message }}</p>
 
-@section('content')
+            @if (isset($playerScores))
+                <h3>Player {{ $playerNumber }}</h3>
 
-    <h1>{{ $header }}</h1>
-    <p><i>{{ $message }}</i></p>
+                <div>
+                    @foreach($playerScores as $key => $value)
+                        <div class="flex flex-row justify-between p-0 m-0">
+                            <p class=""><i class="dice-utf8 dice-{{ $key +1 }}"></i> Points: <b></b>{{ $value }}</b></p>
+                        </div>
+                    @endforeach
 
-    @if (isset($playerScores))
-        <h3>Player {{ $playerNumber }}</h3>
-        <div>
+                    <p class="py-4">Player total score: {{ $scoreSum }}</p>
+                </div>
+            @endif
 
-        @foreach($playerScores as $key => $value)
-            <div class="diceContainer__results">
-                <p><i class="dice-utf8 dice-{{ $key +1 }}"></i> Points: <b></b>{{ $value }}</b></p>
-            </div>
-        @endforeach
-
-        <h4>Player total score: {{ $scoreSum }}</h4>
-        </div>
-    @endif
-
-@endsection
+        </x-form>
+    </x-section>
+</x-layout>
