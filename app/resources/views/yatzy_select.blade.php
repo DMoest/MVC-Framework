@@ -24,7 +24,7 @@
                 </div>
             @endif
 
-            <div class=" w-100 p-4">
+            <div class="p-4">
                 <button class="w-60 m-auto flex flex-row justify-around p-4 rounded-sm bg-blue-200 uppercase font-link font-semibold hover:bg-blue-300 hover:text-white" type="submit" name="submit">Position points <i class="p-1 fas fa-cash-register"></i></button>
             </div>
 

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="w-full">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport"
@@ -9,7 +9,7 @@
         <meta name="description" content="This is a web page made for the course MVC @ Blekinge Intitute of Technologies.">
         <meta name="keywords" content="mvc, laravel, php, bth, webprogrammering">
 
-        <title>Daniels super applikation</title>
+        <title>Daniels Super Applikation</title>
 
         {{-- Google fonts --}}
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +24,7 @@
     </head>
 
 
-    <body class="w-100 m-0 font-body">
+    <body class="w-full font-body">
 
         @include('partials/header')
 
