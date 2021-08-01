@@ -16,8 +16,9 @@
                 {!! $scoreBoard !!}
             </div>
 
-            <div class="w-52 m-auto">
-                <button class="w-52 p-4 bg-blue-300 rounded-sm flex flex-row justify-around font-link uppercase font-semibold hover:bg-blue-200 hover:text-white" type="submit" name="submit">Next <i class="p-1 fas fa-forward"></i></button>
+            <div class="p-4">
+                <button class="w-60 m-auto flex flex-row justify-around p-4 rounded-sm bg-blue-200 uppercase font-link font-semibold hover:bg-blue-300 hover:text-white" type="submit" name="submit">
+                    Next <x-icon-fast-forward class="w-4" /></button>
             </div>
         </x-form>
     </x-section>

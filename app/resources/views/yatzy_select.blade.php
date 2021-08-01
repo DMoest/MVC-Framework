@@ -25,7 +25,8 @@
             @endif
 
             <div class="p-4">
-                <button class="w-60 m-auto flex flex-row justify-around p-4 rounded-sm bg-blue-200 uppercase font-link font-semibold hover:bg-blue-300 hover:text-white" type="submit" name="submit">Position points <i class="p-1 fas fa-cash-register"></i></button>
+                <button class="w-60 m-auto flex flex-row justify-around p-4 rounded-sm bg-blue-200 uppercase font-link font-semibold hover:bg-blue-300 hover:text-white" type="submit" name="submit">
+                    Position points <x-icon-folder-outline-add class="w-4" /></button>
             </div>
 
         </x-form>

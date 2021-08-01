@@ -22341,12 +22341,12 @@ video {
   font-family: Lato;
 }
 
-.font-link{
-  font-family: Lato;
-}
-
 .font-body{
   font-family: Roboto;
+}
+
+.font-link{
+  font-family: Lato;
 }
 
 .text-xs{
@@ -59837,12 +59837,12 @@ readers do not read off random characters that represent icons */
     font-family: Lato;
   }
 
-  .sm\:font-link{
-    font-family: Lato;
-  }
-
   .sm\:font-body{
     font-family: Roboto;
+  }
+
+  .sm\:font-link{
+    font-family: Lato;
   }
 
   .sm\:text-xs{
@@ -91068,12 +91068,12 @@ readers do not read off random characters that represent icons */
     font-family: Lato;
   }
 
-  .md\:font-link{
-    font-family: Lato;
-  }
-
   .md\:font-body{
     font-family: Roboto;
+  }
+
+  .md\:font-link{
+    font-family: Lato;
   }
 
   .md\:text-xs{
@@ -122299,12 +122299,12 @@ readers do not read off random characters that represent icons */
     font-family: Lato;
   }
 
-  .lg\:font-link{
-    font-family: Lato;
-  }
-
   .lg\:font-body{
     font-family: Roboto;
+  }
+
+  .lg\:font-link{
+    font-family: Lato;
   }
 
   .lg\:text-xs{
@@ -153530,12 +153530,12 @@ readers do not read off random characters that represent icons */
     font-family: Lato;
   }
 
-  .xl\:font-link{
-    font-family: Lato;
-  }
-
   .xl\:font-body{
     font-family: Roboto;
+  }
+
+  .xl\:font-link{
+    font-family: Lato;
   }
 
   .xl\:text-xs{
@@ -184761,12 +184761,12 @@ readers do not read off random characters that represent icons */
     font-family: Lato;
   }
 
-  .\32xl\:font-link{
-    font-family: Lato;
-  }
-
   .\32xl\:font-body{
     font-family: Roboto;
+  }
+
+  .\32xl\:font-link{
+    font-family: Lato;
   }
 
   .\32xl\:text-xs{

@@ -17,9 +17,9 @@
             <label for="machine" class="pb-2">Play against computer?
                 <input type="checkbox" name="machine" value="true" checked class=""/></label>
 
-            <div class="m-auto w-60 p-3 bg-blue-100 border-2 border-blue-200 text-center rounded-sm flex flex-row justify-around hover:bg-blue-200 hover:text-white">
-                <button type="submit" class="uppercase font-link font-semibold">Start game</button>
-                <i class="p-1 fas fa-play text-blue-600"></i>
+            <div class="m-auto flex flex-row justify-around">
+                <button class="group w-60 flex flex-row justify-around p-4 bg-blue-100 border-2 border-blue-200 text-center rounded-sm uppercase font-link font-semibold hover:bg-blue-200 hover:text-white" type="submit">
+                    Start game <x-icon-play class="w-4 inline-block group-hover:fill-current group-hover:text-white" /></button>
             </div>
 
         </x-form>

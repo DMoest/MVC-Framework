@@ -25,7 +25,7 @@ use App\Http\Controllers\DiceGame21Controller;
  */
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('index');
 
 
 
@@ -40,11 +40,11 @@ Route::get('/hello-world-view', function () {
     return view('message', [
         'message' => "Hello World from within a view"
     ]);
-});
-Route::get('/hello', [HelloWorldController::class, 'hello']);
+})->name('hello-world');
+Route::get('/hello', [HelloWorldController::class, 'hello'])->name('hello');
 Route::get('/hello/{message}', [HelloWorldController::class, 'hello']);
 
-Route::get('/form', [FormController::class, 'index']);
+Route::get('/form', [FormController::class, 'index'])->name('form');
 Route::post('/form/process', [FormController::class, 'process']);
 Route::get('/form/view', [FormController::class, 'view']);
 
@@ -54,17 +54,17 @@ Route::get('/form/view', [FormController::class, 'view']);
  * Yatzy routes
  * --------------------------------------------------
  */
-Route::get('yatzy/init/view', [YatzyController::class, 'viewInit']);
-Route::post('yatzy/init/process', [YatzyController::class, 'processInit']);
+Route::get('/yatzy/init/view', [YatzyController::class, 'viewInit'])->name('yatzyInitView');
+Route::post('/yatzy/init/process', [YatzyController::class, 'processInit'])->name('yatzyInitProcess');
 
-Route::get('yatzy/view', [YatzyController::class, 'viewMain']);
-Route::post('yatzy/process', [YatzyController::class, 'processMain']);
+Route::get('/yatzy/view', [YatzyController::class, 'viewMain'])->name('yatzyMainView');
+Route::post('/yatzy/process', [YatzyController::class, 'processMain'])->name('yatzyMainProcess');
 
-Route::get('yatzy/select/view', [YatzyController::class, 'viewSelect']);
-Route::post('yatzy/select/process', [YatzyController::class, 'processSelect']);
+Route::get('/yatzy/select/view', [YatzyController::class, 'viewSelect'])->name('yatzySelectView');
+Route::post('/yatzy/select/process', [YatzyController::class, 'processSelect'])->name('yatzySelectProcess');
 
-Route::get('yatzy/result/view', [YatzyController::class, 'viewResult']);
-Route::post('yatzy/result/process', [YatzyController::class, 'processResult']);
+Route::get('/yatzy/result/view', [YatzyController::class, 'viewResult'])->name('yatzyResultView');
+Route::post('/yatzy/result/process', [YatzyController::class, 'processResult'])->name('yatzyResultProcess');
 
 
 
@@ -72,11 +72,11 @@ Route::post('yatzy/result/process', [YatzyController::class, 'processResult']);
  * DiceGame21 routes
  * --------------------------------------------------
  */
-Route::get('dice/init/view', [DiceGame21Controller::class, 'viewInit']);
-Route::post('dice/init/process', [DiceGame21Controller::class, 'processInit']);
+Route::get('/dice/init/view', [DiceGame21Controller::class, 'viewInit'])->name('diceInitView');
+Route::post('/dice/init/process', [DiceGame21Controller::class, 'processInit'])->name('diceInitProcess');
 
-Route::get('dice/view', [DiceGame21Controller::class, 'viewMain']);
-Route::post('dice/process', [DiceGame21Controller::class, 'processMain']);
+Route::get('/dice/view', [DiceGame21Controller::class, 'viewMain'])->name('diceMainView');
+Route::post('/dice/process', [DiceGame21Controller::class, 'processMain'])->name('diceMainProcess');
 
-Route::get('dice/result/view', [DiceGame21Controller::class, 'viewResult']);
-Route::post('dice/result/process', [DiceGame21Controller::class, 'processResult']);
+Route::get('/dice/result/view', [DiceGame21Controller::class, 'viewResult'])->name('diceResultView');
+Route::post('/dice/result/process', [DiceGame21Controller::class, 'processResult'])->name('diceResultProcess');

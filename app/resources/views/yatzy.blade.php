@@ -31,8 +31,10 @@
             @endif
 
             <div class="m-auto p-4 flex flex-row justify-around">
-                <button class="w-52 flex flex-row justify-around p-4 rounded-sm bg-green-400 uppercase font-link font-semibold hover:bg-green-300 hover:text-white" type="submit" name="submit" value="roll">Roll dices <i class="p-1 fas fa-dice"></i></button>
-                <button class="w-52 flex flex-row justify-around p-4 rounded-sm bg-red-400 uppercase font-link font-semibold hover:bg-red-300 hover:text-white" type="submit" name="submit" value="stop">Stop <i class="p-1 fas fa-hand-paper"></i></button>
+                <button class="w-52 flex flex-row justify-around p-4 rounded-sm bg-green-400 uppercase font-link font-semibold hover:bg-green-300 hover:text-white" type="submit" name="submit" value="roll">
+                    Roll dices <x-icon-play class="w-4" /></button>
+                <button class="group w-60 flex flex-row justify-around p-4 bg-red-400 text-center rounded-sm uppercase font-link font-semibold hover:bg-red-300 hover:text-white" type="submit">
+                    Stop <x-icon-hand-stop class="w-4 inline-block group-hover:fill-current group-hover:text-white" /></button>
             </div>
 
         </x-form>
