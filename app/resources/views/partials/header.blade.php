@@ -14,7 +14,8 @@
     <div class="md:hidden">
         <x-dropdown>
             <x-slot name="trigger">
-                <x-icon-menu class="w-4" />
+                <x-icon-menu x-show="! open" class="w-4" />
+                <x-icon-close x-show="open" class="w-4" />
                 <button class="font-link uppercase">Menu</button>
             </x-slot>
 
