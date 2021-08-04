@@ -1,10 +1,12 @@
 <?php
 
+use App\Models\Book;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HelloWorldController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\YatzyController;
 use App\Http\Controllers\DiceGame21Controller;
+use App\Http\Controllers\LibraryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -87,4 +89,12 @@ Route::post('/dice/result/process', [DiceGame21Controller::class, 'processResult
  * Library route
  * --------------------------------------------------
  */
-Route:get('/library/view', [LibraryController::class, 'view'])->name('library');
+Route::get('/library/view', [LibraryController::class, 'viewLibrary'])->name('library');
+
+
+
+Route::get('/library/book/{book}', function(Book $book) {   //Book::where('id', $bookID)->firstOrFail()
+        return view('book', [
+            'book' => $book,
+        ]);
+    });
