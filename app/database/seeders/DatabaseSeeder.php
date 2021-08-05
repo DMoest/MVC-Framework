@@ -101,6 +101,10 @@ class DatabaseSeeder extends Seeder
             'name' => 'Outdoors',
         ]);
 
+        Category::create([
+            'name' => 'Information Analysis',
+        ]);
+
 
 
         /* --- Books Seeds --- */
@@ -275,23 +279,33 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Book::create([
-            'isbn' => '978-91-44-10556-7',
-            'title' => 'Webbutveckling med PHP och MySQL',
-            'author' => 'Montathar Faraon',
-            'released' => 2016,
-            'publisher' => "McGraw-Hill Education",
-            'category_id' => 3,
-            'picture' => 'images/books/webbutveckling_php_mysql.jpg',
+            'isbn' => '978-3-86490-568-1',
+            'title' => 'Python Tricks',
+            'author' => 'Dan Bader',
+            'released' => 2009,
+            'publisher' => "dpunkt.verlag",
+            'category_id' => 2,
+            'picture' => 'images/books/python_tricks.jpg',
         ]);
 
         Book::create([
-            'isbn' => '978-91-44-06919-7',
-            'title' => 'Databasteknik',
-            'author' => 'Thomas Padron-McCarthy & Tore Risch',
-            'released' => 2018,
-            'publisher' => "Studentlitteratur",
-            'category_id' => 4,
-            'picture' => 'images/books/databasteknik.jpg',
+            'isbn' => '978-1-59327-192-3',
+            'title' => 'Grey Hat Python: Python programming for hackers and reverse engineers',
+            'author' => 'Justin Seitz',
+            'released' => 2009,
+            'publisher' => "No Starch",
+            'category_id' => 2,
+            'picture' => 'images/books/grey_hat_python.jpg',
+        ]);
+
+        Book::create([
+            'isbn' => '978-1-593227-590-7',
+            'title' => 'Black Hat Python: Python programming for hackers and pentesters',
+            'author' => 'Justin Seitz',
+            'released' => 2015,
+            'publisher' => "No Starch",
+            'category_id' => 2,
+            'picture' => 'images/books/black_hat_python.jpg',
         ]);
 
         Book::create([
@@ -305,6 +319,16 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Book::create([
+            'isbn' => '978-91-44-10556-7',
+            'title' => 'Webbutveckling med PHP och MySQL',
+            'author' => 'Montathar Faraon',
+            'released' => 2016,
+            'publisher' => "McGraw-Hill Education",
+            'category_id' => 3,
+            'picture' => 'images/books/webbutveckling_php_mysql.jpg',
+        ]);
+
+        Book::create([
             'isbn' => '978-0-9922794-4-8',
             'title' => 'The Principles Of Beautiful Web Design Third Edition',
             'author' => 'Jason Beaird & James George',
@@ -312,6 +336,26 @@ class DatabaseSeeder extends Seeder
             'publisher' => "SitePoint",
             'category_id' => 5,
             'picture' => 'images/books/principles_of_beautiful_web_design.jpg',
+        ]);
+
+        Book::create([
+            'isbn' => '978-91-44-06919-7',
+            'title' => 'Databasteknik',
+            'author' => 'Thomas Padron-McCarthy & Tore Risch',
+            'released' => 2018,
+            'publisher' => "Studentlitteratur",
+            'category_id' => 4,
+            'picture' => 'images/books/databasteknik.jpg',
+        ]);
+
+        Book::create([
+            'isbn' => '978-91-44-10870-4',
+            'title' => 'Statistisk Dataanalys',
+            'author' => 'Svante Körner & Lars Wahlgren',
+            'released' => 2015,
+            'publisher' => "Studentlitteratur",
+            'category_id' => 12,
+            'picture' => 'images/books/statistisk_dataanalys.jpg',
         ]);
 
         Book::create([
@@ -352,6 +396,16 @@ class DatabaseSeeder extends Seeder
             'publisher' => "Liber",
             'category_id' => 5,
             'picture' => 'images/books/design_i_fokus.jpg',
+        ]);
+
+        Book::create([
+            'isbn' => '',
+            'title' => 'Konvergens Kultur: Där gammla och nya medier kolliderar',
+            'author' => 'Henry Jenkins',
+            'released' => 2012,
+            'publisher' => "Diadalos",
+            'category_id' => 9,
+            'picture' => 'images/books/konvergens_kulturen.jpg',
         ]);
 
         Book::create([
