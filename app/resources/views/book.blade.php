@@ -5,7 +5,7 @@
             <div class="font-body">
                 <h2 class="text-xl font-weight-bold font-header pb-6">{{ $book->title }}</h2>
                 <p class="py-1">ISBN: {{ $book->isbn }}</p>
-                <p class="py-1">Author: {{ $book->author }}</p>
+                <p class="py-1">Author: {{ $book->author->name }}</p>
                 <p class="py-1">Category: {{ $book->category->name }}</p>
                 <p class="py-1">Publisher: {{ $book->publisher }}</p>
                 <p class="py-1">This Edition Released: {{ $book->released }}</p>

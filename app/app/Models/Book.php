@@ -15,13 +15,13 @@ class Book extends Model
      * @var array
      */
     protected $fillable = [
-        'category_id',
         'isbn',
         'title',
-        'author',
-        'picture',
-        'released',
+        'author_id',
+        'category_id',
         'publisher',
+        'released',
+        'picture',
     ];
 
 
@@ -30,6 +30,16 @@ class Book extends Model
      * @var array
      */
     protected $guarded = ['id'];
+
+
+    /**
+     * Getter method to return Author of the book. Book belongs to Author relationship.
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function author()
+    {
+        return $this->belongsTo(Author::class);
+    }
 
 
     /**
@@ -42,7 +52,10 @@ class Book extends Model
     }
 
 
-
+    /**
+     *
+     * @return string
+     */
     public function getRouteKeyName()
     {
         return 'id';

@@ -16,9 +16,9 @@ class CreateBooksTable extends Migration
         Schema::create('books', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->foreignId('category_id');
+            $table->foreignId('author_id');
             $table->string('isbn')->unique();
             $table->string('title')->unique();
-            $table->string('author');
             $table->string('picture')->nullable();
             $table->date('released');
             $table->string('publisher');
@@ -26,6 +26,7 @@ class CreateBooksTable extends Migration
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.
