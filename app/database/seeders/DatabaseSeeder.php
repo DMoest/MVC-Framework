@@ -111,7 +111,7 @@ class DatabaseSeeder extends Seeder
             'released' => 2015,
             'publisher' => "O'Reilly",
             'category_id' => 1,
-            'picture' => 'images/You_dont_know_JS1.jpg',
+            'picture' => 'images/books/you_dont_know_JS1.jpg',
         ]);
 
         Book::create([
@@ -121,7 +121,7 @@ class DatabaseSeeder extends Seeder
             'released' => 2015,
             'publisher' => "O'Reilly",
             'category_id' => 1,
-            'picture' => 'images/You_dont_know_JS2.jpg',
+            'picture' => 'images/books/you_dont_know_JS2.jpg',
         ]);
 
         Book::create([
@@ -131,7 +131,7 @@ class DatabaseSeeder extends Seeder
             'released' => 2015,
             'publisher' => "O'Reilly",
             'category_id' => 1,
-            'picture' => 'images/You_dont_know_JS3.jpg',
+            'picture' => 'images/books/you_dont_know_JS3.jpg',
         ]);
 
         Book::create([
@@ -141,7 +141,7 @@ class DatabaseSeeder extends Seeder
             'released' => 2015,
             'publisher' => "O'Reilly",
             'category_id' => 1,
-            'picture' => 'images/You_dont_know_JS4.jpg',
+            'picture' => 'images/books/you_dont_know_JS4.jpg',
         ]);
 
         Book::create([
@@ -151,7 +151,7 @@ class DatabaseSeeder extends Seeder
             'released' => 2015,
             'publisher' => "O'Reilly",
             'category_id' => 1,
-            'picture' => 'images/You_dont_know_JS5.jpg',
+            'picture' => 'images/books/you_dont_know_JS5.jpg',
         ]);
 
         Book::create([
@@ -161,7 +161,7 @@ class DatabaseSeeder extends Seeder
             'released' => 2015,
             'publisher' => "O'Reilly",
             'category_id' => 1,
-            'picture' => 'images/You_dont_know_JS6.jpg',
+            'picture' => 'images/books/you_dont_know_JS6.jpg',
         ]);
 
         Book::create([
@@ -171,7 +171,7 @@ class DatabaseSeeder extends Seeder
             'released' => 2014,
             'publisher' => "O'Reilly",
             'category_id' => 1,
-            'picture' => NULL,
+            'picture' => 'images/books/speaking_javascript.jpg',
         ]);
 
         Book::create([
@@ -181,7 +181,7 @@ class DatabaseSeeder extends Seeder
             'released' => 2011,
             'publisher' => "O'Reilly",
             'category_id' => 1,
-            'picture' => NULL,
+            'picture' => 'images/books/javascript_the_definitive_guide.jpg',
         ]);
 
         Book::create([
@@ -191,7 +191,7 @@ class DatabaseSeeder extends Seeder
             'released' => 2008,
             'publisher' => "O'Reilly",
             'category_id' => 1,
-            'picture' => NULL,
+            'picture' => 'images/books/javascript_the_good_parts.jpg',
         ]);
 
         Book::create([
@@ -201,7 +201,7 @@ class DatabaseSeeder extends Seeder
             'released' => 2016,
             'publisher' => "",
             'category_id' => 2,
-            'picture' => NULL,
+            'picture' => 'images/books/python_for_everybody.jpg',
         ]);
 
         Book::create([
@@ -211,7 +211,7 @@ class DatabaseSeeder extends Seeder
             'released' => 2015,
             'publisher' => "",
             'category_id' => 2,
-            'picture' => NULL,
+            'picture' => 'images/books/python_informatics.jpg',
         ]);
 
         Book::create([
@@ -221,7 +221,7 @@ class DatabaseSeeder extends Seeder
             'released' => 2016,
             'publisher' => "O'Reilly",
             'category_id' => 2,
-            'picture' => NULL,
+            'picture' => 'images/books/think_python.jpg',
         ]);
 
         Book::create([
@@ -231,7 +231,7 @@ class DatabaseSeeder extends Seeder
             'released' => 2018,
             'publisher' => "Packt",
             'category_id' => 2,
-            'picture' => NULL,
+            'picture' => 'images/books/python_oo.jpg',
         ]);
 
         Book::create([
@@ -241,7 +241,7 @@ class DatabaseSeeder extends Seeder
             'released' => 2020,
             'publisher' => "No Starch",
             'category_id' => 2,
-            'picture' => NULL,
+            'picture' => 'images/books/automate_python.jpg',
         ]);
 
         Book::create([
@@ -251,7 +251,7 @@ class DatabaseSeeder extends Seeder
             'released' => 2017,
             'publisher' => "No Starch",
             'category_id' => 2,
-            'picture' => NULL,
+            'picture' => 'images/books/python_games.jpg',
         ]);
 
         Book::create([
@@ -261,7 +261,7 @@ class DatabaseSeeder extends Seeder
             'released' => 2019,
             'publisher' => "No Starch",
             'category_id' => 2,
-            'picture' => NULL,
+            'picture' => 'images/books/serious_python.jpg',
         ]);
 
         Book::create([
@@ -271,7 +271,7 @@ class DatabaseSeeder extends Seeder
             'released' => 2016,
             'publisher' => "McGraw-Hill Education",
             'category_id' => 2,
-            'picture' => NULL,
+            'picture' => 'images/books/python_raspberry_pi.jpg',
         ]);
 
         Book::create([
@@ -281,7 +281,7 @@ class DatabaseSeeder extends Seeder
             'released' => 2016,
             'publisher' => "McGraw-Hill Education",
             'category_id' => 3,
-            'picture' => NULL,
+            'picture' => 'images/books/webbutveckling_php_mysql.jpg',
         ]);
 
         Book::create([
@@ -291,7 +291,7 @@ class DatabaseSeeder extends Seeder
             'released' => 2018,
             'publisher' => "Studentlitteratur",
             'category_id' => 4,
-            'picture' => NULL,
+            'picture' => 'images/books/databasteknik.jpg',
         ]);
 
         Book::create([
@@ -301,7 +301,7 @@ class DatabaseSeeder extends Seeder
             'released' => 2011,
             'publisher' => "Wiley",
             'category_id' => 8,
-            'picture' => NULL,
+            'picture' => 'images/books/HTML_CSS.jpg',
         ]);
 
         Book::create([
@@ -311,7 +311,7 @@ class DatabaseSeeder extends Seeder
             'released' => 2014,
             'publisher' => "SitePoint",
             'category_id' => 5,
-            'picture' => NULL,
+            'picture' => 'images/books/principles_of_beautiful_web_design.jpg',
         ]);
 
         Book::create([
@@ -321,7 +321,7 @@ class DatabaseSeeder extends Seeder
             'released' => 2017,
             'publisher' => "Pearson",
             'category_id' => 7,
-            'picture' => NULL,
+            'picture' => 'images/books/computer_network.jpg',
         ]);
 
         Book::create([
@@ -331,7 +331,7 @@ class DatabaseSeeder extends Seeder
             'released' => 2009,
             'publisher' => "Carlsson Bokförlag",
             'category_id' => 5,
-            'picture' => NULL,
+            'picture' => 'images/books/effektiv_visuell_kommunikation.jpg',
         ]);
 
         Book::create([
@@ -341,7 +341,7 @@ class DatabaseSeeder extends Seeder
             'released' => 2001,
             'publisher' => "Carlsson Bokförlag",
             'category_id' => 5,
-            'picture' => NULL,
+            'picture' => 'images/books/bild_budskap.jpg',
         ]);
 
         Book::create([
@@ -351,7 +351,7 @@ class DatabaseSeeder extends Seeder
             'released' => 2003,
             'publisher' => "Liber",
             'category_id' => 5,
-            'picture' => NULL,
+            'picture' => 'images/books/design_i_fokus.jpg',
         ]);
 
         Book::create([
@@ -361,7 +361,7 @@ class DatabaseSeeder extends Seeder
             'released' => 2009,
             'publisher' => "Phaidon Press",
             'category_id' => 6,
-            'picture' => NULL,
+            'picture' => 'images/books/the_photo_book.jpg',
         ]);
 
         Book::create([
@@ -371,7 +371,7 @@ class DatabaseSeeder extends Seeder
             'released' => 2008,
             'publisher' => "Pagina",
             'category_id' => 6,
-            'picture' => NULL,
+            'picture' => 'images/books/konsten_att_ta_vinnande_bilder.jpg',
         ]);
 
         Book::create([
@@ -381,7 +381,7 @@ class DatabaseSeeder extends Seeder
             'released' => 1991,
             'publisher' => "Celemiab International",
             'category_id' => 9,
-            'picture' => NULL,
+            'picture' => 'images/books/länge_leve_lärandet.jpg',
         ]);
 
         Book::create([
@@ -391,7 +391,7 @@ class DatabaseSeeder extends Seeder
             'released' => 1998,
             'publisher' => "Gleerups Förlag",
             'category_id' => 9,
-            'picture' => NULL,
+            'picture' => 'images/books/konsten_att_tala_och_skriva.jpg',
         ]);
 
         Book::create([
@@ -401,7 +401,7 @@ class DatabaseSeeder extends Seeder
             'released' => 2005,
             'publisher' => "Cassell Illustrated",
             'category_id' => 10,
-            'picture' => NULL,
+            'picture' => 'images/books/gigs_that_changed_the_world.jpg',
         ]);
 
         Book::create([
@@ -411,7 +411,7 @@ class DatabaseSeeder extends Seeder
             'released' => 2003,
             'publisher' => "Albert Bonniers Förlag AB",
             'category_id' => 10,
-            'picture' => NULL,
+            'picture' => 'images/books/bonniers_musiklexikon.jpg',
         ]);
 
         Book::create([
@@ -421,7 +421,7 @@ class DatabaseSeeder extends Seeder
             'released' => 2011,
             'publisher' => "Low Pressure LTD",
             'category_id' => 11,
-            'picture' => NULL,
+            'picture' => 'images/books/stormrider_surf_guide_indonesia.jpg',
         ]);
 
         Book::create([
@@ -431,7 +431,7 @@ class DatabaseSeeder extends Seeder
             'released' => 1978,
             'publisher' => "province of British Columbia",
             'category_id' => 11,
-            'picture' => NULL,
+            'picture' => 'images/books/wilderness_survival.jpg',
         ]);
     }
 }

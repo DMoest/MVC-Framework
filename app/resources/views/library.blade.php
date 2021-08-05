@@ -23,14 +23,16 @@
             <x-table-row class="hover:cursor-pointer">
                 <th class="px-2">Book: </th>
 
-                <x-td-link href="/library/book/{{ $book->id }}"><p class="px-2 m-0 text-center"> {{ $key }} </p></x-td-link>
-                <x-td-link href="/library/book/{{ $book->id }}"><p class="px-2 m-0 text-right"> {{ $book->isbn }} </p></x-td-link>
-                <x-td-link href="/library/book/{{ $book->id }}"><p class="px-2 m-0 text-left"> {{ $book->title }} </p></x-td-link>
-                <x-td-link href="/library/book/{{ $book->id }}"><p class="px-2 m-0 text-center"> {{ $book->author }} </p></x-td-link>
-                <x-td-link href="/library/book/{{ $book->id }}"><p class="px-2 m-0 text-center"> {{ $book->publisher }} </p></x-td-link>
+                <x-td-link route="book/{{ $book->id }}"><p class="px-2 m-0 text-center"> {{ $key }} </p></x-td-link>
+                <x-td-link route="book/{{ $book->id }}"><p class="px-2 m-0 text-right"> {{ $book->isbn }} </p></x-td-link>
+                <x-td-link route="book/{{ $book->id }}"><p class="px-2 m-0 text-left"> {{ $book->title }} </p></x-td-link>
+                <x-td-link route="book/{{ $book->id }}"><p class="px-2 m-0 text-center"> {{ $book->author }} </p></x-td-link>
+                <x-td-link route="book/{{ $book->id }}"><p class="px-2 m-0 text-center"> {{ $book->publisher }} </p></x-td-link>
                 <td><p class="px-2 m-0 text-right"> {{ $book->released }} </p></td>
                 <td><p class="px-2 m-0 text-right"> {{ $book->added_to_library }} </p></td>
-                <x-td-link href="/library/book/{{ $book->id }}"><img src="{{ asset($book->picture) }}" class="w-14 p-2 m-0 text-right"></img></x-td-link>
+                <x-td-link route="book/{{ $book->id }}">
+                    <img src="{{ asset($book->picture) }}" class="w-14 p-2 m-0 text-right"/>
+                </x-td-link>
             </x-table-row>
         @endforeach
 

@@ -1,17 +1,17 @@
 <x-layout>
     <x-section>
 
-        <div class="w-1/2 m-auto my-10 p-4 flex flex-row justify-around">
-            <div>
-                <h2>{{ $book->title }}</h2>
-                <p>ISBN: {{ $book->isbn }}</p>
-                <p>Author: {{ $book->author }}</p>
-                <p>Release year: {{ $book->released }}</p>
-                <p>Publisher: {{ $book->publisher }}</p>
-                <p>Added to library: {{ $book->added_to_library }}</p>
+        <div class="w-3/4 m-auto my-10 p-4 flex flex-row justify-around gap-8">
+            <div class="font-body">
+                <h2 class="text-xl font-weight-bold font-header pb-6">{{ $book->title }}</h2>
+                <p class="py-1">ISBN: {{ $book->isbn }}</p>
+                <p class="py-1">Author: {{ $book->author }}</p>
+                <p class="py-1">Publisher: {{ $book->publisher }}</p>
+                <p class="py-1">This Edition Released: {{ $book->released }}</p>
+                <p class="py-1">Added here: {{ $book->added_to_library }}</p>
             </div>
 
-            <div class="w-32">
+            <div class="w-52 m-2">
                 <img src="{{ asset($book->picture) }}">
             </div>
         </div>

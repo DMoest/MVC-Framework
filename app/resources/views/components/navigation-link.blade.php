@@ -1,6 +1,5 @@
 @props(['route'])
 
-
 @php
   $classes = Request::routeIs($route) ? 'text-white bg-blue-200 ' : 'hover:underline hover:text-blue-400';
 @endphp
