@@ -17,6 +17,7 @@ class CreateBooksTable extends Migration
             $table->id()->autoIncrement();
             $table->foreignId('category_id');
             $table->foreignId('author_id');
+            $table->foreignId('publisher_id');
             $table->string('isbn')->unique();
             $table->string('title')->unique();
             $table->string('picture')->nullable();

@@ -19,7 +19,7 @@ class Book extends Model
         'title',
         'author_id',
         'category_id',
-        'publisher',
+        'publisher_id',
         'released',
         'picture',
     ];
@@ -39,6 +39,16 @@ class Book extends Model
     public function author()
     {
         return $this->belongsTo(Author::class);
+    }
+
+
+    /**
+     * Getter method to return Publisher of the book. Book belongs to Publisher relationship.
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function publisher()
+    {
+        return $this->belongsTo(Publisher::class);
     }
 
 
