@@ -91,10 +91,14 @@ Route::post('/dice/result/process', [DiceGame21Controller::class, 'processResult
  */
 Route::get('/library', [LibraryController::class, 'viewLibrary'])->name('library');
 
-
-
-Route::get('/book/{book:id}', function(Book $book) {   //Book::where('id', $bookID)->firstOrFail()
+Route::get('/book/{book:id}', function(Book $book) {   //Book::where('id', $book)->firstOrFail()
         return view('book', [
             'book' => $book,
         ]);
     })->name('book');
+
+Route::get('/author/{author:id}', function(Author $author) {   //Book::where('id', $author)->firstOrFail()
+    return view('author', [
+        'author' => $author,
+    ]);
+})->name('author');
