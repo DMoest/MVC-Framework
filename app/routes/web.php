@@ -2,6 +2,7 @@
 
 use App\Models\Book;
 use App\Models\Author;
+use App\Models\Publisher;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HelloWorldController;
 use App\Http\Controllers\FormController;
@@ -110,7 +111,7 @@ Route::get('/author/{author:id}', function(Author $author) {   //Book::where('id
     ]);
 })->name('author');
 
-Route::get('/publisher/{publisher:id}', function(Author $publisher) {   //Book::where('id', $publisher)->firstOrFail()
+Route::get('/publisher/{publisher:id}', function(Publisher $publisher) {   //Book::where('id', $publisher)->firstOrFail()
     return view('publisher', [
         'publisher' => $publisher,
         'books' => $publisher->books,
