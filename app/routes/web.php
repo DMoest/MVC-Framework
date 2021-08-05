@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Book;
+use App\Models\Author;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HelloWorldController;
 use App\Http\Controllers\FormController;
@@ -100,5 +101,6 @@ Route::get('/book/{book:id}', function(Book $book) {   //Book::where('id', $book
 Route::get('/author/{author:id}', function(Author $author) {   //Book::where('id', $author)->firstOrFail()
     return view('author', [
         'author' => $author,
+        'books' => $author->books,
     ]);
 })->name('author');

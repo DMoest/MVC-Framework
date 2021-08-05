@@ -1,11 +1,11 @@
 <x-layout>
     <x-section>
 
-        <div class="w-3/4 m-auto my-10 p-4 flex flex-row justify-around gap-8">
+        <div class="w-3/4 m-auto my-10 p-4">
             <div class="font-body">
-                <h2 class="text-xl font-weight-bold font-header pb-6">{{ $author->name }}</h2>
+                <h2 class="text-xl text-center font-weight-bold font-header pb-6">{{ $author->name }}</h2>
 
-                <p class="py-1">This authors work:</p>
+                <p class="py-1 text-center">This is the part of {{ $author->name }}'s work I curently own.</p>
             </div>
 
 
