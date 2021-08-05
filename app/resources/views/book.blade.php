@@ -7,7 +7,7 @@
                 <p class="py-1">ISBN: {{ $book->isbn }}</p>
                 <p class="py-1">Author: {{ $book->author->name }}</p>
                 <p class="py-1">Category: {{ $book->category->name }}</p>
-                <p class="py-1">Publisher: {{ $book->publisher }}</p>
+                <p class="py-1">Publisher: {{ $book->publisher->name }}</p>
                 <p class="py-1">This Edition Released: {{ $book->released }}</p>
                 <p class="py-1">Added here: {{ $book->added_to_library }}</p>
             </div>
