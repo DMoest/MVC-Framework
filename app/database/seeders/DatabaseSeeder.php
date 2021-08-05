@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use App\Models\Author;
 use App\Models\Book;
+use App\Models\Publisher;
 use App\Models\Category;
 use Illuminate\Database\Seeder;
 
@@ -55,121 +56,240 @@ class DatabaseSeeder extends Seeder
 
 
 
+
+
+
+        /* --- Publishers Seeds --- */
+        Publisher::create([
+            'name' => "O'Reilly",
+        ]);
+
+        Publisher::create([
+            'name' => "Packt",
+        ]);
+
+        Publisher::create([
+            'name' => "No Starch",
+        ]);
+
+        Publisher::create([
+            'name' => "McGraw-Hill Education",
+        ]);
+
+        Publisher::create([
+            'name' => "dpunkt.verlag",
+        ]);
+
+        Publisher::create([
+            'name' => "Wiley",
+        ]);
+
+        Publisher::create([
+            'name' => "Studentlitteratur",
+        ]);
+
+        Publisher::create([
+            'name' => "SitePoint",
+        ]);
+
+        Publisher::create([
+            'name' => "Pearson",
+        ]);
+
+        Publisher::create([
+            'name' => "Carlsson Bokförlag",
+        ]);
+
+        Publisher::create([
+            'name' => "Liber",
+        ]);
+
+        Publisher::create([
+            'name' => "Diadalos",
+        ]);
+
+        Publisher::create([
+            'name' => "Phaidon Press",
+        ]);
+
+        Publisher::create([
+            'name' => "Pagina",
+        ]);
+
+        Publisher::create([
+            'name' => "Celemiab International",
+        ]);
+
+        Publisher::create([
+            'name' => "Gleerups Förlag",
+        ]);
+
+        Publisher::create([
+            'name' => "Cassell Illustrated",
+        ]);
+
+        Publisher::create([
+            'name' => "Albert Bonniers Förlag AB",
+        ]);
+
+        Publisher::create([
+            'name' => "Low Pressure LTD",
+        ]);
+
+        Publisher::create([
+            'name' => "Province Of British Columbia",
+        ]);
+
+        Publisher::create([
+            'name' => "Unknown Publisher",
+        ]);
+
+
+
         /* --- Author Seeds --- */
         Author::create([
             'name' => 'Kyle Simpson',
+            'publisher_id' => 1,
         ]);
 
         Author::create([
             'name' => 'Dr.Axel Rauschmayer',
+            'publisher_id' => 1,
         ]);
 
         Author::create([
             'name' => 'David Flanagan',
+            'publisher_id' => 1,
         ]);
 
         Author::create([
             'name' => 'Douglas Crockford',
+            'publisher_id' => 1,
         ]);
 
         Author::create([
             'name' => 'Charles R. Severance',
+            'publisher_id' => 21,
         ]);
 
         Author::create([
             'name' => 'Allen B. Downey',
+            'publisher_id' => 1,
         ]);
 
         Author::create([
             'name' => 'Dusty Phillips',
+            'publisher_id' => 2,
         ]);
 
         Author::create([
             'name' => 'Al Sweigart',
+            'publisher_id' => 3,
         ]);
 
         Author::create([
             'name' => 'Julien Danjou',
+            'publisher_id' => 3,
         ]);
 
         Author::create([
             'name' => 'Dr. Simon Monk',
+            'publisher_id' => 4,
         ]);
 
         Author::create([
             'name' => 'Dan Bader',
+            'publisher_id' => 5,
         ]);
 
         Author::create([
             'name' => 'Justin Seitz',
+            'publisher_id' => 3,
         ]);
 
         Author::create([
             'name' => 'Jon Duckett',
+            'publisher_id' => 6,
         ]);
 
         Author::create([
             'name' => 'Montathar Faraon',
+            'publisher_id' => 7,
         ]);
 
         Author::create([
             'name' => 'Jason Beaird & James George',
+            'publisher_id' => 8,
         ]);
 
         Author::create([
             'name' => 'Thomas Padron-McCarthy & Tore Risch',
+            'publisher_id' => 7,
         ]);
 
         Author::create([
             'name' => 'Svante Körner & Lars Wahlgren',
+            'publisher_id' => 7,
         ]);
 
         Author::create([
             'name' => 'Ross Kurose',
+            'publisher_id' => 9,
         ]);
 
         Author::create([
             'name' => 'Bo Bergström',
+            'publisher_id' => 10,
         ]);
 
         Author::create([
             'name' => 'Kenneth Österlin',
+            'publisher_id' => 11,
         ]);
 
         Author::create([
             'name' => 'Henry Jenkins',
+            'publisher_id' => 12,
         ]);
 
         Author::create([
             'name' => 'Phaidon Press',
+            'publisher_id' => 13,
         ]);
 
         Author::create([
             'name' => 'Göran Segeholm',
+            'publisher_id' => 14,
         ]);
 
         Author::create([
             'name' => 'Klas Mellander',
+            'publisher_id' => 15,
         ]);
 
         Author::create([
             'name' => 'Siv Strömquist',
+            'publisher_id' => 16,
         ]);
 
         Author::create([
             'name' => 'Mark Paytress',
+            'publisher_id' => 17,
         ]);
 
         Author::create([
             'name' => 'Albert Bonniers Förlag AB',
+            'publisher_id' => 18,
         ]);
 
         Author::create([
             'name' => 'Bruce Sutherland, Dan Haylock & Ollie Fitzjones',
+            'publisher_id' => 19,
         ]);
 
         Author::create([
             'name' => 'Litographed by K.M McDonald @ Queens Printer, Victoria',
+            'publisher_id' => 20,
         ]);
 
 
@@ -231,7 +351,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'You dont know JS - Up & Going',
             'author_id' => 1,
             'released' => 2015,
-            'publisher' => "O'Reilly",
+            'publisher_id' => 1,
             'category_id' => 1,
             'picture' => 'images/books/you_dont_know_JS1.jpg',
         ]);
@@ -241,7 +361,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'You dont know JS - Scopes & Closures',
             'author_id' => 1,
             'released' => 2015,
-            'publisher' => "O'Reilly",
+            'publisher_id' => 1,
             'category_id' => 1,
             'picture' => 'images/books/you_dont_know_JS2.jpg',
         ]);
@@ -251,7 +371,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'You dont know JS - this & Object Prototypes',
             'author_id' => 1,
             'released' => 2015,
-            'publisher' => "O'Reilly",
+            'publisher_id' => 1,
             'category_id' => 1,
             'picture' => 'images/books/you_dont_know_JS3.jpg',
         ]);
@@ -261,7 +381,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'You dont know JS - Types & Grammar',
             'author_id' => 1,
             'released' => 2015,
-            'publisher' => "O'Reilly",
+            'publisher_id' => 1,
             'category_id' => 1,
             'picture' => 'images/books/you_dont_know_JS4.jpg',
         ]);
@@ -271,7 +391,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'You dont know JS - Async & Performance',
             'author_id' => 1,
             'released' => 2015,
-            'publisher' => "O'Reilly",
+            'publisher_id' => 1,
             'category_id' => 1,
             'picture' => 'images/books/you_dont_know_JS5.jpg',
         ]);
@@ -281,7 +401,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'You dont know JS - ES6 & Beyond',
             'author_id' => 1,
             'released' => 2015,
-            'publisher' => "O'Reilly",
+            'publisher_id' => 1,
             'category_id' => 1,
             'picture' => 'images/books/you_dont_know_JS6.jpg',
         ]);
@@ -291,7 +411,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Speaking JavaScript',
             'author_id' => 2,
             'released' => 2014,
-            'publisher' => "O'Reilly",
+            'publisher_id' => 1,
             'category_id' => 1,
             'picture' => 'images/books/speaking_javascript.jpg',
         ]);
@@ -301,7 +421,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'JavaScript: The Definitive Guide',
             'author_id' => 3,
             'released' => 2011,
-            'publisher' => "O'Reilly",
+            'publisher_id' => 1,
             'category_id' => 1,
             'picture' => 'images/books/javascript_the_definitive_guide.jpg',
         ]);
@@ -311,7 +431,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'JavaScript: The Good Parts',
             'author_id' => 4,
             'released' => 2008,
-            'publisher' => "O'Reilly",
+            'publisher_id' => 1,
             'category_id' => 1,
             'picture' => 'images/books/javascript_the_good_parts.jpg',
         ]);
@@ -321,7 +441,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Python for Everybody: Exploring Data in Python 3',
             'author_id' => 5,
             'released' => 2016,
-            'publisher' => "",
+            'publisher_id' => 21,
             'category_id' => 2,
             'picture' => 'images/books/python_for_everybody.jpg',
         ]);
@@ -331,7 +451,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Python for Informatics: Exploring Information in Python 2',
             'author_id' => 5,
             'released' => 2015,
-            'publisher' => "",
+            'publisher_id' => 21,
             'category_id' => 2,
             'picture' => 'images/books/python_informatics.jpg',
         ]);
@@ -341,7 +461,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Think Python',
             'author_id' => 6,
             'released' => 2016,
-            'publisher' => "O'Reilly",
+            'publisher_id' => 1,
             'category_id' => 2,
             'picture' => 'images/books/think_python.jpg',
         ]);
@@ -351,7 +471,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Python 3 Object-Oriented Programming',
             'author_id' => 7,
             'released' => 2018,
-            'publisher' => "Packt",
+            'publisher_id' => 2,
             'category_id' => 2,
             'picture' => 'images/books/python_oo.jpg',
         ]);
@@ -361,7 +481,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Automate the Boring Stuff with Python: Practical Programming for Total Beginners 2nd Edition',
             'author_id' => 8,
             'released' => 2020,
-            'publisher' => "No Starch",
+            'publisher_id' => 3,
             'category_id' => 2,
             'picture' => 'images/books/automate_python.jpg',
         ]);
@@ -371,7 +491,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Invent Your Own Computer Games With Python 4th Edition',
             'author_id' => 8,
             'released' => 2017,
-            'publisher' => "No Starch",
+            'publisher_id' => 3,
             'category_id' => 2,
             'picture' => 'images/books/python_games.jpg',
         ]);
@@ -381,7 +501,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Serious Python',
             'author_id' => 9,
             'released' => 2019,
-            'publisher' => "No Starch",
+            'publisher_id' => 3,
             'category_id' => 2,
             'picture' => 'images/books/serious_python.jpg',
         ]);
@@ -391,7 +511,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Programming the Raspberry Pi: Getting Started with Python',
             'author_id' => 10,
             'released' => 2016,
-            'publisher' => "McGraw-Hill Education",
+            'publisher_id' => 4,
             'category_id' => 2,
             'picture' => 'images/books/python_raspberry_pi.jpg',
         ]);
@@ -401,7 +521,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Python Tricks',
             'author_id' => 11,
             'released' => 2009,
-            'publisher' => "dpunkt.verlag",
+            'publisher_id' => 5,
             'category_id' => 2,
             'picture' => 'images/books/python_tricks.jpg',
         ]);
@@ -411,7 +531,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Grey Hat Python: Python programming for hackers and reverse engineers',
             'author_id' => 12,
             'released' => 2009,
-            'publisher' => "No Starch",
+            'publisher_id' => 3,
             'category_id' => 2,
             'picture' => 'images/books/grey_hat_python.jpg',
         ]);
@@ -421,7 +541,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Black Hat Python: Python programming for hackers and pentesters',
             'author_id' => 12,
             'released' => 2015,
-            'publisher' => "No Starch",
+            'publisher_id' => 3,
             'category_id' => 2,
             'picture' => 'images/books/black_hat_python.jpg',
         ]);
@@ -431,7 +551,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'HTML & CSS: Design and Build Websites',
             'author_id' => 13,
             'released' => 2011,
-            'publisher' => "Wiley",
+            'publisher_id' => 6,
             'category_id' => 8,
             'picture' => 'images/books/HTML_CSS.jpg',
         ]);
@@ -441,7 +561,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Webbutveckling med PHP och MySQL',
             'author_id' => 14,
             'released' => 2016,
-            'publisher' => "McGraw-Hill Education",
+            'publisher_id' => 7,
             'category_id' => 3,
             'picture' => 'images/books/webbutveckling_php_mysql.jpg',
         ]);
@@ -451,7 +571,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'The Principles Of Beautiful Web Design Third Edition',
             'author_id' => 15,
             'released' => 2014,
-            'publisher' => "SitePoint",
+            'publisher_id' => 8,
             'category_id' => 5,
             'picture' => 'images/books/principles_of_beautiful_web_design.jpg',
         ]);
@@ -461,7 +581,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Databasteknik',
             'author_id' => 16,
             'released' => 2018,
-            'publisher' => "Studentlitteratur",
+            'publisher_id' => 7,
             'category_id' => 4,
             'picture' => 'images/books/databasteknik.jpg',
         ]);
@@ -471,7 +591,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Statistisk Dataanalys',
             'author_id' => 17,
             'released' => 2015,
-            'publisher' => "Studentlitteratur",
+            'publisher_id' => 7,
             'category_id' => 12,
             'picture' => 'images/books/statistisk_dataanalys.jpg',
         ]);
@@ -481,7 +601,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Computer Networking: A Top-Down Approach 7th Edition',
             'author_id' => 18,
             'released' => 2017,
-            'publisher' => "Pearson",
+            'publisher_id' => 9,
             'category_id' => 7,
             'picture' => 'images/books/computer_network.jpg',
         ]);
@@ -491,7 +611,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Effektiv Visuell Kommunikation',
             'author_id' => 19,
             'released' => 2009,
-            'publisher' => "Carlsson Bokförlag",
+            'publisher_id' => 10,
             'category_id' => 5,
             'picture' => 'images/books/effektiv_visuell_kommunikation.jpg',
         ]);
@@ -501,7 +621,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Bild & Budskap',
             'author_id' => 19,
             'released' => 2001,
-            'publisher' => "Carlsson Bokförlag",
+            'publisher_id' => 10,
             'category_id' => 5,
             'picture' => 'images/books/bild_budskap.jpg',
         ]);
@@ -511,17 +631,17 @@ class DatabaseSeeder extends Seeder
             'title' => 'Design i Fokus för Produktutveckling',
             'author_id' => 20,
             'released' => 2003,
-            'publisher' => "Liber",
+            'publisher_id' => 11,
             'category_id' => 5,
             'picture' => 'images/books/design_i_fokus.jpg',
         ]);
 
         Book::create([
-            'isbn' => '',
+            'isbn' => '978-91-7173-368-9',
             'title' => 'Konvergens Kultur: Där gammla och nya medier kolliderar',
             'author_id' => 21,
             'released' => 2012,
-            'publisher' => "Diadalos",
+            'publisher_id' => 12,
             'category_id' => 9,
             'picture' => 'images/books/konvergens_kulturen.jpg',
         ]);
@@ -531,7 +651,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'The Photo Book',
             'author_id' => 22,
             'released' => 2009,
-            'publisher' => "Phaidon Press",
+            'publisher_id' => 13,
             'category_id' => 6,
             'picture' => 'images/books/the_photo_book.jpg',
         ]);
@@ -541,7 +661,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Konsten att ta vinnande bilder',
             'author_id' => 23,
             'released' => 2008,
-            'publisher' => "Pagina",
+            'publisher_id' => 14,
             'category_id' => 6,
             'picture' => 'images/books/konsten_att_ta_vinnande_bilder.jpg',
         ]);
@@ -551,7 +671,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Länge Leve Lärandet',
             'author_id' => 24,
             'released' => 1991,
-            'publisher' => "Celemiab International",
+            'publisher_id' => 15,
             'category_id' => 9,
             'picture' => 'images/books/länge_leve_lärandet.jpg',
         ]);
@@ -561,7 +681,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Konsten att Tala och Skriva, Andra Upplagan',
             'author_id' => 25,
             'released' => 1998,
-            'publisher' => "Gleerups Förlag",
+            'publisher_id' => 16,
             'category_id' => 9,
             'picture' => 'images/books/konsten_att_tala_och_skriva.jpg',
         ]);
@@ -571,7 +691,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'I Was There: Gigs That Changed the World',
             'author_id' => 26,
             'released' => 2005,
-            'publisher' => "Cassell Illustrated",
+            'publisher_id' => 17,
             'category_id' => 10,
             'picture' => 'images/books/gigs_that_changed_the_world.jpg',
         ]);
@@ -581,7 +701,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Bonniers Musiklexikon',
             'author_id' => 27,
             'released' => 2003,
-            'publisher' => "Albert Bonniers Förlag AB",
+            'publisher_id' => 18,
             'category_id' => 10,
             'picture' => 'images/books/bonniers_musiklexikon.jpg',
         ]);
@@ -591,7 +711,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'The Stormriders Surf Guide: Indonesia And The Indian Ocean',
             'author_id' => 27,
             'released' => 2011,
-            'publisher' => "Low Pressure LTD",
+            'publisher_id' => 19,
             'category_id' => 11,
             'picture' => 'images/books/stormrider_surf_guide_indonesia.jpg',
         ]);
@@ -601,7 +721,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Wilderness Survival',
             'author_id' => 28,
             'released' => 1978,
-            'publisher' => "Province Of British Columbia",
+            'publisher_id' => 20,
             'category_id' => 11,
             'picture' => 'images/books/wilderness_survival.jpg',
         ]);

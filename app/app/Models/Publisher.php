@@ -28,4 +28,14 @@ class Publisher extends Model
     {
         return $this->hasMany(Author::class);
     }
+
+
+    /**
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'id';
+    }
 }

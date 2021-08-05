@@ -23,7 +23,10 @@ class Author extends Model
      * The attributes that are mass assignable.
      * @var array
      */
-    protected $fillable = ['name'];
+    protected $fillable = [
+        'name',
+        'publisher_id'
+    ];
 
 
     /**
