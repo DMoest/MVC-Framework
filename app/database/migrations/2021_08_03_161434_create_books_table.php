@@ -22,7 +22,7 @@ class CreateBooksTable extends Migration
             $table->string('title')->unique();
             $table->string('picture')->nullable();
             $table->date('released');
-            $table->string('publisher');
+//            $table->string('publisher');
             $table->timestamp('added_to_library')->useCurrent();
             $table->timestamps();
         });
