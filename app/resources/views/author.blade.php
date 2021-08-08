@@ -30,7 +30,7 @@
                         <x-td-link route="./../book/{{ $book->id }}"><p class="px-2 m-0 text-center"> {{ $key }} </p></x-td-link>
                         <x-td-link route="./../book/{{ $book->id }}"><p class="px-2 m-0 text-right"> {{ $book->isbn }} </p></x-td-link>
                         <x-td-link route="./../book/{{ $book->id }}"><p class="px-2 m-0 text-left"> {{ $book->title }} </p></x-td-link>
-                        <x-td-link route="./../publisher/{{ $book->publisher->id }}"><p class="px-2 m-0 text-center"> {{ $book->publisher->name }} </p></x-td-link>
+                        <x-td-link route="./../publisher/{{ $book->publisher_id }}"><p class="px-2 m-0 text-center"> {{ $book->publisher->name }} </p></x-td-link>
                         <td><p class="px-2 m-0 text-right"> {{ $book->released }} </p></td>
                         <td><p class="px-2 m-0 text-right"> {{ $book->added_to_library }} </p></td>
                         <x-td-link route="./../book/{{ $book->id }}">
