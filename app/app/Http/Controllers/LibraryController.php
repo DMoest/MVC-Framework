@@ -17,7 +17,7 @@ class LibraryController extends Controller
         $data = [
             'header' => 'Daniels Library',
             'message' => 'Welcome to a private library of good, exciting, interesting, motivating, advernturus (and much more) books. I hope you like reading them just as I do and if you have any suggestions, please let me know. I like to learn more. ',
-            'books' => Book::all()
+            'books' => Book::with('category', 'author', 'publisher')->get(),
         ];
 
         return view('library', $data);

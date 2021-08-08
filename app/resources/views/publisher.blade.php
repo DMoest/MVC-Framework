@@ -17,7 +17,7 @@
                     <th class="p-1 text-center text-grey-500">Name</th>
                 </tr>
 
-                @foreach($authors as $key => $author)
+                @foreach($publisher->authors as $key => $author)
                     <x-table-row class="hover:cursor-pointer">
                         <th class="px-2">Author: </th>
 
@@ -45,7 +45,7 @@
                     <th class="p-1 text-center text-grey-500">Picture</th>
                 </tr>
 
-                @foreach ($books as $key => $book)
+                @foreach ($publisher->books as $key => $book)
                     <x-table-row class="hover:cursor-pointer">
                         <th class="px-2">Book: </th>
 
