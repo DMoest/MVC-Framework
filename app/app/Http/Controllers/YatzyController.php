@@ -240,4 +240,10 @@ class YatzyController extends Controller
 
         return view("yatzy_result", $data);
     }
+
+
+
+    final public function viewHighscore() {
+
+    }
 }
