@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\HighscoreYatzy;
 use App\Models\User;
 use App\Models\Author;
 use App\Models\Book;
@@ -724,6 +725,33 @@ class DatabaseSeeder extends Seeder
             'publisher_id' => 20,
             'category_id' => 11,
             'picture' => 'images/books/wilderness_survival.jpg',
+        ]);
+
+
+
+        HighscoreYatzy::create([
+            'name' => 'Kalle Anka',
+            'score' => 99,
+        ]);
+
+        HighscoreYatzy::create([
+            'name' => 'Kajsa Anka',
+            'score' => 95,
+        ]);
+
+        HighscoreYatzy::create([
+            'name' => 'Knatte Anka',
+            'score' => 101,
+        ]);
+
+        HighscoreYatzy::create([
+            'name' => 'Fnatte Anka',
+            'score' => 93,
+        ]);
+
+        HighscoreYatzy::create([
+            'name' => 'Tjatte Anka',
+            'score' => 90,
         ]);
     }
 }

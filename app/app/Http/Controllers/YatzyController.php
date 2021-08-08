@@ -231,7 +231,7 @@ class YatzyController extends Controller
         $data = [
             "header" => "Yatzy - Players Final Results",
             "message" => "You have compleated this part of the game and here are your current scores.",
-            "action" => url("/yatzy__selectScores/process"),
+            "action" => url("/yatzy/result/process"),
             "round" => $yatzy->getRound(),
             "playerNumber" => $yatzy->getPlayerIndex() +1,
             "scoreBoard" => $yatzy->printYatzyScoreBoard(),
@@ -243,13 +243,25 @@ class YatzyController extends Controller
     }
 
 
+    /**
+     * @return RedirectResponse
+     */
+    final public function processResult(Request $request): RedirectResponse
+    {
+        $input = $request->post();
+        HighscoreYatzy::create(['name' => $input['name'], 'score' => $input['score']]);
+
+        return redirect('/yatzy/highscore/view');
+    }
+
+
 
     final public function viewHighscore() {
 
         $data = [
             'header' => 'Yatzy - Highscore',
             'message' => "Here's the all time highscore list. Check if you have made it!",
-            'highscores' => HighscoreYatzy::all()->orderBy('score', 'desc')->limit(10)->get(),
+            'highscores' => HighscoreYatzy::orderBy('score', 'desc')->limit(10)->get(),
         ];
 
         return view('yatzy_highscore', $data);
