@@ -115,6 +115,7 @@ Route::get('/book/{book}', function(Book $book) {   //Book::where('id', $book)->
 Route::get('/category/{category}', function(Category $category) {   //Book::where('id', $category)->firstOrFail()
     return view('category', [
         'category' => $category,
+        'books' => $category->books->load('author', 'publisher'),
     ]);
 })->name('category');
 

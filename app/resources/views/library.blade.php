@@ -7,10 +7,10 @@
         <x-table class="m-auto my-8 border-solid border-2 border-blue-200">
             {{-- Table explanatory row --}}
             <tr class="p-2 bg-blue-200">
-                <th></th> {{-- Empty column over book number--}}
                 <th class="p-1 text-center text-grey-500">Index</th>
                 <th class="p-1 text-center text-grey-500">ISBN</th>
                 <th class="p-1 text-center text-grey-500">Title</th>
+                <th class="p-1 text-center text-grey-500">Category</th>
                 <th class="p-1 text-center text-grey-500">Author</th>
                 <th class="p-1 text-center text-grey-500">Publisher</th>
                 <th class="p-1 text-center text-grey-500">Released</th>
@@ -21,11 +21,10 @@
 
         @foreach ($books as $key => $book)
             <x-table-row class="hover:cursor-pointer">
-                <th class="px-2">Book: </th>
-
                 <x-td-link route="book/{{ $book->id }}"><p class="px-2 m-0 text-center"> {{ $key }} </p></x-td-link>
                 <x-td-link route="book/{{ $book->id }}"><p class="px-2 m-0 text-right"> {{ $book->isbn }} </p></x-td-link>
                 <x-td-link route="book/{{ $book->id }}"><p class="px-2 m-0 text-left"> {{ $book->title }} </p></x-td-link>
+                <x-td-link route="category/{{ $book->category_id }}"><p class="px-2 m-0 text-left"> {{ $book->category->name }} </p></x-td-link>
                 <x-td-link route="author/{{ $book->author_id }}"><p class="px-2 m-0 text-center"> {{ $book->author->name }} </p></x-td-link>
                 <x-td-link route="publisher/{{ $book->publisher_id }}"><p class="px-2 m-0 text-center"> {{ $book->publisher->name }} </p></x-td-link>
                 <td><p class="px-2 m-0 text-right"> {{ $book->released }} </p></td>
