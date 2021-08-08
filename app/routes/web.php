@@ -2,6 +2,7 @@
 
 use App\Models\Book;
 use App\Models\Author;
+use App\Models\Category;
 use App\Models\Publisher;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HelloWorldController;
@@ -97,6 +98,7 @@ Route::get('/dice/finalResult/view', [DiceGame21Controller::class, 'viewFinalRes
  * --------------------------------------------------
  * Library
  * Book
+ * Category
  * Author
  * Publisher
  * --------------------------------------------------
@@ -109,12 +111,21 @@ Route::get('/book/{book}', function(Book $book) {   //Book::where('id', $book)->
         ]);
     })->name('book');
 
+
+Route::get('/category/{category}', function(Category $category) {   //Book::where('id', $category)->firstOrFail()
+    return view('category', [
+        'category' => $category,
+    ]);
+})->name('category');
+
+
 Route::get('/author/{author}', function(Author $author) {   //Book::where('id', $author)->firstOrFail()
     return view('author', [
         'author' => $author,
         'books' => $author->books->load('category', 'publisher'),
     ]);
 })->name('author');
+
 
 Route::get('/publisher/{publisher}', function(Publisher $publisher) {   //Book::where('id', $publisher)->firstOrFail()
     return view('publisher', [
