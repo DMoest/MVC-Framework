@@ -48,13 +48,13 @@ class Author extends Model
         return $this->belongsTo(Publisher::class);
     }
 
-
-    /**
-     *
-     * @return string
-     */
-    public function getRouteKeyName()
-    {
-        return 'id';
-    }
+//
+//    /**
+//     *
+//     * @return string
+//     */
+//    public function getRouteKeyName()
+//    {
+//        return 'id';
+//    }
 }

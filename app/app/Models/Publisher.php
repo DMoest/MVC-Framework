@@ -10,6 +10,15 @@ class Publisher extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name'
+    ];
+
+    protected $guarded = [
+        'id'
+    ];
+
+
     /**
      * Getter method to return Books published from Publisher. Publisher has many Books relationship.
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -30,12 +39,13 @@ class Publisher extends Model
     }
 
 
-    /**
-     *
-     * @return string
-     */
-    public function getRouteKeyName()
-    {
-        return 'id';
-    }
+
+//    /**
+//     *
+//     * @return string
+//     */
+//    public function getRouteKeyName()
+//    {
+//        return 'id';
+//    }
 }

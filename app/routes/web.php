@@ -70,6 +70,9 @@ Route::post('/yatzy/select/process', [YatzyController::class, 'processSelect'])-
 Route::get('/yatzy/result/view', [YatzyController::class, 'viewResult'])->name('yatzyResultView');
 Route::post('/yatzy/result/process', [YatzyController::class, 'processResult'])->name('yatzyResultProcess');
 
+Route::get('/yatzy/highscore/view', [YatzyController::class, 'viewHighscore'])->name('yatzyHighScoreView');
+Route::post('/yatzy/highscore/process', [YatzyController::class, 'processHighscore'])->name('yatzyHighScoreProcess');
+
 
 
 /**
@@ -100,23 +103,23 @@ Route::get('/dice/finalResult/view', [DiceGame21Controller::class, 'viewFinalRes
  */
 Route::get('/library', [LibraryController::class, 'viewLibrary'])->name('library');
 
-Route::get('/book/{book:id}', function(Book $book) {   //Book::where('id', $book)->firstOrFail()
+Route::get('/book/{book}', function(Book $book) {   //Book::where('id', $book)->firstOrFail()
         return view('book', [
             'book' => $book,
         ]);
     })->name('book');
 
-Route::get('/author/{author:id}', function(Author $author) {   //Book::where('id', $author)->firstOrFail()
+Route::get('/author/{author}', function(Author $author) {   //Book::where('id', $author)->firstOrFail()
     return view('author', [
         'author' => $author,
-        'books' => $author->books,
+        'books' => $author->books->load('category', 'publisher'),
     ]);
 })->name('author');
 
-Route::get('/publisher/{publisher:id}', function(Publisher $publisher) {   //Book::where('id', $publisher)->firstOrFail()
+Route::get('/publisher/{publisher}', function(Publisher $publisher) {   //Book::where('id', $publisher)->firstOrFail()
     return view('publisher', [
         'publisher' => $publisher,
-        'books' => $publisher->books,
-        'authors' => $publisher->authors,
+        'authors' => $publisher->authors->load('books'),
+        'books' => $publisher->books->load('author', 'category'),
     ]);
 })->name('publisher');
