@@ -37,7 +37,7 @@ class PlayerResultsTraitTest extends TestCase
     final public function testPlayerTraitResultsAsStringMethod(): void
     {
         /* Setup test case */
-        $this->player->rollDices(6);
+        $this->player->rollDices();
         $resultString = $this->player->getResultsAsString();
 
         /* Test existence of expected class methods */
@@ -54,7 +54,7 @@ class PlayerResultsTraitTest extends TestCase
     final public function testPlayerTraitLastRollAsStringMethod(): void
     {
         /* setup test case */
-        $this->player->rollDices(6);
+        $this->player->rollDices();
         $lastRollString = $this->player->getLastRollAsString();
 
         $this->assertIsString($lastRollString);

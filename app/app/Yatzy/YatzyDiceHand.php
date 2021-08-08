@@ -32,7 +32,7 @@ class YatzyDiceHand extends DiceHand implements YatzyDiceHandInterface
      * @description Method to roll the dice objects in dice hand for new values.
      * @return array
      */
-    final public function roll(): array
+    final public function roll(int $dices = 1): array
     {
         $diceHand = $this->getDices();
         $lastRoll = $this->getLastRoll();

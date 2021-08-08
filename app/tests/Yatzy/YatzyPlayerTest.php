@@ -46,14 +46,13 @@ class YatzyPlayerTest extends TestCase
         $this->assertInstanceOf("daap19\Yatzy\YatzyPlayer", $this->player);
 
         /* Test unique parent::class attributes */
-        $this->assertObjectHasAttribute("lastHand", $this->player);
+        $this->assertObjectHasAttribute("diceHand", $this->player);
 
         /* Test YatzyPlayer attributes */
         $this->assertObjectHasAttribute("rolls", $this->player);
         $this->assertObjectHasAttribute("results", $this->player);
         $this->assertObjectHasAttribute("lastRoll", $this->player);
         $this->assertObjectHasAttribute("diceHand", $this->player);
-        $this->assertObjectHasAttribute("lastHand", $this->player);
         $this->assertObjectHasAttribute("sum", $this->player);
         $this->assertObjectHasAttribute("average", $this->player);
         $this->assertObjectHasAttribute("playerScores", $this->player);
@@ -62,7 +61,6 @@ class YatzyPlayerTest extends TestCase
         $this->assertTrue(method_exists($this->player, "rollDices"), "Class does not have expected method rollDices.");
         $this->assertTrue(method_exists($this->player, "getRolls"), "Class does not have expected method getRolls.");
         $this->assertTrue(method_exists($this->player, "getScore"), "Class does not have expected method getScore.");
-        $this->assertTrue(method_exists($this->player, "getPlayerScore"), "Class does not have expected method getPlayerScore.");
         $this->assertTrue(method_exists($this->player, "getPlayerScore"), "Class does not have expected method getPlayerScore.");
         $this->assertTrue(method_exists($this->player, "getAmountOfScoresSaved"), "Class does not have expected method getAmountOfScoresSaved.");
         $this->assertTrue(method_exists($this->player, "getAmountOfScoresSaved"), "Class does not have expected method getAmountOfScoresSaved.");

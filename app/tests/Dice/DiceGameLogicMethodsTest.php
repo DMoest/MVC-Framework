@@ -88,7 +88,11 @@ class DiceGameLogicMethodsTest extends TestCase
         $players = $this->diceGame->getPlayers();
         $index = $this->diceGame->getPlayerIndex();
         $player = $players[$index];
-        $player->rollDices(22); // Make sure sum of results is passed 21, roll 22 dices. Probability is that its impossible for all 21 to get 1 in score, but just to build a strong/religable test case.
+
+        /*Make sure sum of results is passed 21, roll 22 dices. Probability is that its impossible for all 21 to get 1 in score, but just to build a strong/religable test case.*/
+        for ($i = 0; $i <= 22; $i++) {
+            $player->rollDices();
+        }
 
         $this->diceGame->checkScore($player);
 
@@ -132,12 +136,12 @@ class DiceGameLogicMethodsTest extends TestCase
     final public function testDiceGamePlayGameWithStopArgument(): void
     {
         /* Setup test case */
-        $this->diceGame->playGame(1, "stop");
         $players = $this->diceGame->getPlayers();
         $index = $this->diceGame->getPlayerIndex();
         $player = $players[$index];
-        $stopped = $player->hasStopped();
+        $this->diceGame->playGame(1, "stop");
         $results = $player->getResults();
+        $stopped = $player->hasStopped();
 
         /* test case assertions */
         $this->assertTrue($stopped);

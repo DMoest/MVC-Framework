@@ -4,6 +4,7 @@
  * Namespace declared and others in use.
  */
 namespace Daap19\Yatzy;
+use daap19\Dice\DiceHand;
 use Daap19\Dice\Player;
 use Daap19\Traits\ResultsAsStringTrait;
 
@@ -18,7 +19,7 @@ class YatzyPlayer extends Player implements YatzyPlayerInterface
     use ResultsAsStringTrait;
 
     private ?int $rolls;
-    private ?object $diceHand;
+    protected object $diceHand;
     private bool $stopped;
     private array $playerScores;
 
@@ -33,7 +34,6 @@ class YatzyPlayer extends Player implements YatzyPlayerInterface
 
         $this->rolls = 0;
         $this->diceHand = new YatzyDiceHand();
-        $this->diceHand = null;
         $this->sum = 0;
         $this->average = 0;
         $this->playerScores = [0 => null, 1 => null, 2 => null, 3 => null, 4 => null, 5 => null];
@@ -48,7 +48,7 @@ class YatzyPlayer extends Player implements YatzyPlayerInterface
      */
     final public function rollDices(int $dices = 5, int $faces = 6): array
     {
-        $this->lastRoll = $this->diceHand->roll();
+        $this->lastRoll = $this->diceHand->roll($dices);
 
         foreach ($this->lastRoll as $value) {
             $this->results[] = $value;

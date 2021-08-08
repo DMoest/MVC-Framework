@@ -118,7 +118,7 @@ class DiceGameTest extends TestCase
         $players = $this->diceGame->getPlayers();
         $player = $players[$index];
         $player->rollDices();
-        $diceHand = $player->getLastHand();
+        $diceHand = $player->getDiceHand();
         $graphicDices = $this->diceGame->showGraphicDices($diceHand);
 
         /* Test case assertions */

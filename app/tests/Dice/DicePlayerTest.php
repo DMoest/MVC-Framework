@@ -44,7 +44,7 @@ class DicePlayerTest extends TestCase
         /* Test unique parent::class attributes */
         $this->assertObjectHasAttribute("lastRoll", $this->player);
         $this->assertObjectHasAttribute("results", $this->player);
-        $this->assertObjectHasAttribute("lastHand", $this->player);
+        $this->assertObjectHasAttribute("diceHand", $this->player);
         $this->assertObjectHasAttribute("sum", $this->player);
         $this->assertObjectHasAttribute("average", $this->player);
         $this->assertObjectHasAttribute("faces", $this->player);
@@ -154,7 +154,7 @@ class DicePlayerTest extends TestCase
         $this->player = new DicePlayer(25, 1);
 
         /* Pre setForNextRound */
-        $rolledLastRoll = $this->player->rollDices(5);
+        $rolledLastRoll = $this->player->rollDices();
         $rolledResults = $this->player->getResults();
         $rolledSum = $this->player->getSumTotal();
         $rolledAverage = $this->player->getAverage();

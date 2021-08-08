@@ -105,7 +105,7 @@ class DicePlayerGameLogicTest extends TestCase
         $this->player = new DicePlayer(25, 1);
 
         /* Pre setForNextRound */
-        $rolledLastRoll = $this->player->rollDices(5);
+        $rolledLastRoll = $this->player->rollDices();
         $rolledResults = $this->player->getResults();
         $rolledSum = $this->player->getSumTotal();
         $rolledAverage = $this->player->getAverage();

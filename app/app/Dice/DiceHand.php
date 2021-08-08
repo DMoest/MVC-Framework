@@ -61,7 +61,7 @@ class DiceHand implements DiceHandInterface
         $this->lastRoll = []; // Clear array of values from last roll.
 
         for ($i = 0; $i < $dices; $i++) {
-            $this->lastRoll[] = $this->dices[$i]->roll();
+            $this->lastRoll[$i] = $this->dices[$i]->roll();
         }
 
         return $this->lastRoll;
