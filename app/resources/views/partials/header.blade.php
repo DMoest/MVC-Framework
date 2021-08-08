@@ -28,9 +28,9 @@
             <x-navigation-link route="index">Laravel Docs</x-navigation-link>
 {{--            <x-navigation-link route="hello">Hello</x-navigation-link>--}}
 {{--            <x-navigation-link route="hello-world">Hello World</x-navigation-link>--}}
-            <x-navigation-link route="yatzyHighScoreView">Yatzy Highscore</x-navigation-link>
             <x-navigation-link route="diceInitView">Dice 21</x-navigation-link>
             <x-navigation-link route="yatzyInitView">Yatzy</x-navigation-link>
+            <x-navigation-link route="yatzyHighScoreView">Yatzy Highscore</x-navigation-link>
             <x-navigation-link route="library">Library</x-navigation-link>
         </x-dropdown>
     </div>

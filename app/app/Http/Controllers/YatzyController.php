@@ -5,6 +5,7 @@
  */
 namespace App\Http\Controllers;
 
+use App\Models\HighscoreYatzy;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -245,5 +246,12 @@ class YatzyController extends Controller
 
     final public function viewHighscore() {
 
+        $data = [
+            'header' => 'Yatzy - Highscore',
+            'message' => "Here's the all time highscore list. Check if you have made it!",
+            'highscores' => HighscoreYatzy::all()->orderBy('score', 'desc')->limit(10)->get(),
+        ];
+
+        return view('yatzy_highscore', $data);
     }
 }
