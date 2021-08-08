@@ -249,7 +249,11 @@ class YatzyController extends Controller
     final public function processResult(Request $request): RedirectResponse
     {
         $input = $request->post();
-        HighscoreYatzy::create(['name' => $input['name'], 'score' => $input['score']]);
+        $yatzy = session()->get("yatzy");
+        $player = $yatzy->getCurrentPlayer();
+        $score = $player->getPlayerScoreSum();
+
+        HighscoreYatzy::create(['name' => $input['name'], 'score' => $score]);
 
         return redirect('/yatzy/highscore/view');
     }
