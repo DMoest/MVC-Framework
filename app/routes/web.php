@@ -85,6 +85,8 @@ Route::post('/dice/process', [DiceGame21Controller::class, 'processMain'])->name
 Route::get('/dice/result/view', [DiceGame21Controller::class, 'viewResult'])->name('diceResultView');
 Route::post('/dice/result/process', [DiceGame21Controller::class, 'processResult'])->name('diceResultProcess');
 
+Route::get('/dice/finalResult/view', [DiceGame21Controller::class, 'viewFinalResult'])->name('diceFinalResultView');
+
 
 
 /**

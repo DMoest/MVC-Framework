@@ -20,5 +20,7 @@ module.exports = {
             backgroundColor: ['even']
         },
     },
-    plugins: [],
+    plugins: [
+        require('@tailwindcss/custom-forms'),
+    ],
 }

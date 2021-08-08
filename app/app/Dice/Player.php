@@ -18,7 +18,7 @@ class Player implements PlayerInterface
 
     protected array $results = [];
     protected array $lastRoll = [];
-    protected ?object $lastHand;
+    protected object $diceHand;
     protected ?int $sum = null;
     protected ?float $average = null;
     protected int $faces = 6;
@@ -29,10 +29,11 @@ class Player implements PlayerInterface
      * @method __construct()
      * @description YatzyPlayer class constructor method.
      */
-    public function __construct()
+    public function __construct(int $dices = 1, int $faces = 6)
     {
         $this->sum = 0;
         $this->average = 0;
+        $this->diceHand = new DiceHand($dices, $faces);
     }
 
 
@@ -45,18 +46,14 @@ class Player implements PlayerInterface
      */
     public function rollDices(int $dices = 1, int $faces = 6): array
     {
-        $diceHand = new DiceHand($dices, $faces);
-        $diceHand->roll();
-        $values = $diceHand->getLastRoll();
-        $this->lastHand = $diceHand; // last diceHand as object
-        $this->lastRoll = []; // clear values
+        $this->lastRoll = $this->diceHand->roll($dices);
 
-        foreach ($values as $key => $dice) {
+        foreach ($this->lastRoll as $key => $dice) {
             $this->lastRoll[$key] = $dice;
             $this->results[] = $dice;
         }
 
-        return $values;
+        return $this->lastRoll;
     }
 
 
@@ -100,11 +97,11 @@ class Player implements PlayerInterface
     /**
      * @method getLastHand()
      * @description return dice hand as object.
-     * @return object
+     * @return ?object
      */
-    public function getLastHand(): object
+    public function getDiceHand(): ?object
     {
-        return $this->lastHand;
+        return $this->diceHand;
     }
 
 

@@ -56,12 +56,12 @@ class DiceHand implements DiceHandInterface
      * @description setter method to roll the dices with. Clears the array that holds the last rolled dices. Thru a for-loop iterates, rolls the dice and stores the new value to the array on the property lastHand.
      * @return array as the results of all the dice rolls/throws.
      */
-    public function roll(): array
+    public function roll(int $dices = 1): array
     {
         $this->lastRoll = []; // Clear array of values from last roll.
 
-        foreach ($this->dices as $key => $diceObject) {
-            $this->lastRoll[$key] = $diceObject->roll();
+        for ($i = 0; $i < $dices; $i++) {
+            $this->lastRoll[] = $this->dices[$i]->roll();
         }
 
         return $this->lastRoll;

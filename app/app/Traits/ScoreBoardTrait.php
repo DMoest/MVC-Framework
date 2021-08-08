@@ -27,7 +27,7 @@ trait ScoreBoardTrait
     {
         /* Setup score board outer container element */
         $this->numOfPlayers = count($this->players);
-        $scoreBoard = "<div class=\"diceForm__results--container\">";
+        $scoreBoard = "<div class=\"flex flex-row justify-between gap-1 md:gap-4\">";
 
         /* Generate inner elements for scores */
         for ($i = 0; $i < $this->numOfPlayers; $i++) {
@@ -43,10 +43,11 @@ trait ScoreBoardTrait
             $playerWins = $player->getWins();
             $stopped = $player->hasStopped();
             $bust = $player->isBust();
+            $out = $player->isOut();
 
             /* Build elements */
-            $scoreBoard .= "<div class=\"diceForm__results--player-" . $i . "\">";
-            $scoreBoard .= "<h4>Player " . ($i +1) . "</h4>";
+            $scoreBoard .= "<div class='w-full p-2 md:p-4 border-solid border-2 border-gray-400 rounded bg-blue-100'>";
+            $scoreBoard .= "<h4 class='pb-2 font-weight-bold'>Player " . ($i +1) . "</h4>";
 
             /* Only add elements if player have results */
             if ($totalScore > 0) {
@@ -56,18 +57,20 @@ trait ScoreBoardTrait
             }
 
             /* Remaining credit for this player */
-            $scoreBoard .= "<p>Credit: " . $playerCredit . "</p>";
+            $scoreBoard .= "<p class='pt-4'>Credit: " . $playerCredit . "</p>";
 
             /* If there are winning round print them */
             if ($playerWins > 0) {
                 $scoreBoard .= "<p>Winning rounds: " . $playerWins . "</p>";
             }
 
-            /* Print message if player stopped or is bust. */
+            /* Print message if player have stopped or is bust. */
             if (intval($bust) === 1) {
-                $scoreBoard .= "<span>YatzyPlayer is bust.</span>";
+                $scoreBoard .= "<span class='font-weight-bold text-red-500'>Player is bust.</span>";
             } else if (intval($stopped) === 1) {
-                $scoreBoard .= "<span>YatzyPlayer has stopped.</span>";
+                $scoreBoard .= "<span class='font-weight-bold text-green-500'>Player has stopped.</span>";
+            } else if (intval($out) === 1) {
+                $scoreBoard .= "<span class='font-weight-bold text-red-500'>Player is out of the game.</span>";
             }
 
             /* Close the div */

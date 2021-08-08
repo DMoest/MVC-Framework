@@ -6,13 +6,6 @@
             <div class="pb-2">
                 <h3 class="">Current players score</h3>
 
-                <p class="">Last played hand from Player {{ $playerNumber }}</p>
-                <p class="dice-utf8">
-                    @foreach($graphicDices as $value)
-                        <i class="{{ $value }}"></i>
-                    @endforeach
-                </p>
-
                 {!! $scoreBoard !!}
             </div>
 

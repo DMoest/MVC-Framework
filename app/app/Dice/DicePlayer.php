@@ -22,6 +22,7 @@ class DicePlayer extends Player implements DicePlayerInterface
     private bool $stopped;
     private ?bool $bust;
     private ?bool $out;
+    private bool $winner;
     private bool $machine;
 
 
@@ -33,13 +34,14 @@ class DicePlayer extends Player implements DicePlayerInterface
      */
     public function __construct(int $startCredit = 25, int $machinePlayer = 1)
     {
-        parent::__construct(); // construct from parent class.
+        parent::__construct(2, 6); // construct from parent class.
 
         $this->credit = $startCredit;
         $this->wins = 0;
         $this->stopped = false;
         $this->bust = false;
         $this->out = false;
+        $this->winner = false;
         $this->machine = boolval($machinePlayer); // convert back to boolval.
     }
 
@@ -165,6 +167,24 @@ class DicePlayer extends Player implements DicePlayerInterface
         return $this->machine;
     }
 
+    /**
+     * @description Setter method to set the player to winner of the game.
+     */
+    final public function setWinner(): void
+    {
+        $this->winner = true;
+    }
+
+
+    /**
+     * @description Getter method to return if player is winner or not.
+     * @return bool
+     */
+    final public function isWinner(): bool
+    {
+        return $this->winner;
+    }
+
 
     /**
      * @method setForNextRound()
@@ -179,10 +199,5 @@ class DicePlayer extends Player implements DicePlayerInterface
         $this->average = null;
         $this->stopped = false;
         $this->bust = false;
-
-        /* Check players credit */
-        if ($this->credit <= 0) {
-            $this->stopped = true;
-        }
     }
 }

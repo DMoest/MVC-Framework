@@ -5,7 +5,7 @@
  */
 namespace Daap19\Dice;
 use Daap19\Traits\ScoreBoardTrait;
-
+use function PHPUnit\Framework\isTrue;
 
 
 /**
@@ -33,7 +33,7 @@ class DiceGame21
     {
         if (intval($machine) === 1) {
 
-            for ($i = 0; $i < $numOfPlayers -1; $i++) {
+            for ($i = 0; $i < $numOfPlayers; $i++) {
                 $newPlayer = new DicePlayer($credit, 0);
                 $this->players[] = $newPlayer;
             }
@@ -65,21 +65,26 @@ class DiceGame21
     {
         /**
          * Check values through calling methods on the player class.
-         * First get the player, second check if player is computer or not, third check if player has stopped and last check if player is bust.
+         * First get the player, second check if player is computer or not,
+         * third check if player has stopped and last check if player is bust.
          */
-        $player = $this->players[$this->playerIndex];
+        $player = $this->players[$this->getPlayerIndex()];
         $computer = intval($player->isMachine());
+//        $out = intval($player->isOut());
         $stopped = intval($player->hasStopped());
         $bust = intval($player->isBust());
 
+
         /**
-         * If player is not computer, not stopped and not bust. Run this game through method player round.
+         * If player is not computer, not stopped and not bust.
+         * Run this game through method player round.
          * Else play round through computer.
          */
         if ($computer !== 1 && $stopped !== 1 && $bust !== 1) {
             $this->playerRound($player, $submit, $dices);
         } else if ($computer === 1 && $stopped !== 1 && $bust !== 1) {
             $this->playComputer($player);
+            $this->setNextPlayerIndex();
         }
     }
 
@@ -106,20 +111,23 @@ class DiceGame21
             $this->checkScore($player);
         } else if ($submit === "stop") {
             $player->stop();
+            $this->setNextPlayerIndex();
         }
     }
 
 
     /**
      * @method playComputer()
-     * @description simulated computer run for dice game 21. Its supposed to try an end up within the limits of a good run but hey its not perfect, it just plays.
+     * @description Simulated computer run for dice game 21.
+     *              Its supposed to try an end up within the limits
+     *              of a good run but hey its not perfect, it just plays.
      * @param object $player as the player to run as a computer.
      * @return void
      */
     final public function playComputer(object $player): void
     {
-        $stopped = intval($player->hasStopped());
         $bust = intval($player->isBust());
+        $stopped = intval($player->hasStopped());
         $score = $player->getSumTotal();
 
         /**
@@ -200,13 +208,18 @@ class DiceGame21
      */
     final public function setNextPlayerIndex(): void
     {
-        $lastIndex = (count($this->players) -1);
+        $lastIndex = count($this->players) -1;
+        $out = 1;
 
-        /* Sort out status */
-        if ($this->playerIndex < $lastIndex) {
-            $this->playerIndex++;
-        } else if ($this->playerIndex === $lastIndex) {
-            $this->playerIndex = 0;
+        /* Aborts loop on false value from check isOut() */
+        while ($out === 1) {
+            if ($this->playerIndex < $lastIndex) {
+                $this->playerIndex++;
+            } else if ($this->playerIndex === $lastIndex) {
+                $this->playerIndex = 0;
+            }
+
+            $out = intval($this->players[$this->playerIndex]->isOut());
         }
     }
 
@@ -238,6 +251,8 @@ class DiceGame21
         foreach ($this->players as $player) {
             $player->setForNextRound();
         }
+
+
     }
 
 
@@ -255,6 +270,7 @@ class DiceGame21
         if ($score > 21 && $stopped !== 1) {
             $player->stop();
             $player->setBust();
+            $this->setNextPlayerIndex();
         }
     }
 
@@ -325,5 +341,34 @@ class DiceGame21
             $player->setCredit($newCredit);
             $player->setWin();
         }
+    }
+
+
+    /**
+     * @description Check to see if all players are credit valid for next round in game.
+     * @returns int $count as number of players out of the game.
+     */
+    final public function checkAllPlayersCredit(): int
+    {
+        $count = 0;
+        $stillInTheGame = [];
+        $countPlayers = count($this->players);
+
+        foreach ($this->players as $player) {
+            $credit = $player->getCredit();
+
+            if ($credit < 5) {
+                $player->setOut();
+                $count++;
+            } else {
+                $stillInTheGame[] = $player;
+            }
+        }
+
+        if (count($stillInTheGame) === 1) {
+            $stillInTheGame[0]->setWinner();
+        }
+
+        return $count;
     }
 }

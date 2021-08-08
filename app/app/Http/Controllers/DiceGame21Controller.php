@@ -25,10 +25,10 @@ class DiceGame21Controller extends Controller
     {
         $data = [
             "header" => "DiceGame 21",
-            "message" => "Welcome, please setup a game of dice.
+            "message" => "Welcome, please setup a game of dice 21.
                 You choose the amout of players to be in it and the starting credit each player have.
-                Keep in mind that there will be an extra player added on top of the number you choose.
-                This player is played by the computer.",
+                Keep in mind, there will be an extra player added on top of the number of players you choose if the checkbox for a computer player is selected.
+                All players you create from the slider will be user controlled. ",
             "action" => url("/dice/init/process"),
         ];
 
@@ -76,9 +76,11 @@ class DiceGame21Controller extends Controller
         $playerIndex = $diceGame->getPlayerIndex();
         $player = $players[$playerIndex];
         $credit = $player->getCredit();
+        $diceHand = $player->getDiceHand();
+        $graphicDices = $diceGame->showGraphicDices($diceHand);
 
         $data = [
-            "header" => "Dice DiceGame 21",
+            "header" => "DiceGame 21",
             "message" => "DiceGame on, roll them dices!",
             "action" => url("/dice/process"),
             "round" => $diceGame->getRound(),
@@ -87,6 +89,7 @@ class DiceGame21Controller extends Controller
             "credit" => $credit,
             "numberOfPlayers" => count($diceGame->getPLayers()),
             "playerNumber" => $diceGame->getPlayerIndex() +1,
+            "graphicDices" => $graphicDices,
             "scoreBoard" => $diceGame->printDiceScoreBoard(),
         ];
 
@@ -110,10 +113,16 @@ class DiceGame21Controller extends Controller
         $submit = strval($input["submit"]) ?? null;
 
         /* Play game */
+        $players = $diceGame->getPlayers();
+        $playerIndex = $diceGame->getPlayerIndex();
         $diceGame->playGame($dices, $submit);
-//        $scoreBoard = $diceGame->printDiceScoreBoard();
+        $scoreBoard = $diceGame->printDiceScoreBoard();
 
-        // Return the redirect through parent class ControllerBase
+        // Return the redirect depending on where we are in this round.
+        if($playerIndex !== array_key_last($players)) {
+            return redirect(url("/dice/view"));
+        }
+
         return redirect(url("/dice/result/view"));
     }
 
@@ -134,8 +143,8 @@ class DiceGame21Controller extends Controller
             "message" => "Results for this round.",
             "action" => url("/dice/result/process"),
             "round" => $diceGame->getRound(),
+            "players" => $diceGame->getPlayers(),
             "playerNumber" => $diceGame->getPLayerIndex() +1,
-            "graphicDices" => $diceGame->showGraphicDices($player->getLastHand()),
             "scoreBoard" => $diceGame->printDiceScoreBoard(),
         ];
 
@@ -151,21 +160,34 @@ class DiceGame21Controller extends Controller
     final public function processResult(): RedirectResponse
     {
         $diceGame = session()->get("diceGame21");
-        $players = $diceGame->getPlayers();
-        $playerIndex = $diceGame->getPlayerIndex();
-        $player = $players[$playerIndex];
-        $lastIndex = array_key_last($players);
-        $bust = intval($player->isBust());
-        $stopped = intval($player->hasStopped());
+        $diceGame->setNextRound();
+        $playersOutOfTheGame = $diceGame->checkAllPlayersCredit();
+        $numberOfPlayers = count($diceGame->getPlayers());
 
-        if ($stopped === 1 ?? $bust === 1) {
-            if ($playerIndex === $lastIndex) {
-                $diceGame->setNextRound();
-            }
-
-            $diceGame->setNextPlayerIndex();
+        if ($playersOutOfTheGame < $numberOfPlayers-1) {
+            return redirect(url("/dice/view"));
         }
 
-        return redirect(url("/dice/view"));
+        return redirect(url("/dice/finalResult/view"));
+    }
+
+
+
+    /**
+     * @description
+     * @return View
+     */
+    final public function viewFinalResult(): View
+    {
+        $diceGame = session()->get("diceGame21");
+
+        $data = [
+            "header" => "DiceGame 21 - Final Results",
+            "message" => "The game is over and here are the results. Thank you for playing this game and welcome back any time! ...just bring more credit to the game.",
+            "round" => $diceGame->getRound(),
+            "players" => $diceGame->getPlayers()
+        ];
+
+        return view("diceGame21_finalResult", $data);
     }
 }
