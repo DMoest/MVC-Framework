@@ -1,19 +1,31 @@
 imports:
     - php
+    - javascript
 
 filter:
-    excluded_paths: [vendor/*, test/*]
+    excluded_paths: [vendor/*, build/*, database/*, test/*]
+
+checks:
+    php: true
+    javascript: true
 
 build:
     nodes:
+        analysis:
+            project_setup:
+                override:
+                    - true
         my-tests:
             environment:
                 php:
                     version: 8.0
     tests:
         override:
-            - cd app/
-                command: "make test"
+            - true
+            - command: "make phpcs"
+            - command: "make phpmd"
+            - command: "make phpstan"
+            - command: "make phpunit"
                 coverage:
                     file: "build/coverage.clover"
                     format: "php-clover"

@@ -1,3 +1,11 @@
+[![Build Status](https://www.travis-ci.com/DMoest/MVC-Framework.svg?branch=master)](https://www.travis-ci.com/DMoest/MVC-Framework)  
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/DMoest/MVC-Framework/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/DMoest/MVC-Framework/?branch=master)  
+[![Code Coverage](https://scrutinizer-ci.com/g/DMoest/MVC-Framework/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/DMoest/MVC-Framework/?branch=master)  
+[![Build Status](https://scrutinizer-ci.com/g/DMoest/MVC-Framework/badges/build.png?b=master)](https://scrutinizer-ci.com/g/DMoest/MVC-Framework/build-status/master)  
+[![Code Intelligence Status](https://scrutinizer-ci.com/g/DMoest/MVC-Framework/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)  
+
+
+
 # MVC Course - PHP Frameworks 2021
 
 Repository for the course MVC at Bleking Institute of Technologies.
@@ -28,7 +36,7 @@ If you are interested in the previous work done for this course you will find th
     *If not installed, make sure to install what you need.*
 
 3. Install project dependencies:  
-   *If you are in doubt with what is about to be install into you local environment. declared for the project in `composer.json` and if work is intended also from `package.json`.*
+   *If you are in doubt with what is about to be install into you local environment. Dependencies for the project are declared in `composer.json` and `package.json`.*
       * Navigate to the project root in the folder `app/` through your command line terminal.
       * Run the command `make install`.
       * If you intend to work with the project also run `npm install`.
@@ -43,11 +51,6 @@ If you are interested in the previous work done for this course you will find th
 
 <br>
 
-[![Build Status](https://www.travis-ci.com/DMoest/MVC-Framework.svg?branch=master)](https://www.travis-ci.com/DMoest/MVC-Framework)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/DMoest/MVC-Framework/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/DMoest/MVC-Framework/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/DMoest/MVC-Framework/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/DMoest/MVC-Framework/?branch=master)
-[![Build Status](https://scrutinizer-ci.com/g/DMoest/MVC-Framework/badges/build.png?b=master)](https://scrutinizer-ci.com/g/DMoest/MVC-Framework/build-status/master)
-[![Code Intelligence Status](https://scrutinizer-ci.com/g/DMoest/MVC-Framework/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
 
 
 
