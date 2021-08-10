@@ -5,7 +5,7 @@ php:
     - "8.0"
 
 before_script:
-    - cd add/
+    - cd app/
     - make install
 
 script:
