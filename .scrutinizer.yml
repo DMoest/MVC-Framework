@@ -9,11 +9,11 @@ build:
         my-tests:
             environment:
                 php:
-                    version: 7.4
+                    version: 8.0
     tests:
         override:
-            -
-                command: "make phpunit"
+            - cd app/
+                command: "make test"
                 coverage:
                     file: "build/coverage.clover"
                     format: "php-clover"
