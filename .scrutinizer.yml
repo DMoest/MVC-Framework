@@ -1,18 +1,32 @@
 imports:
     - php
-    - javascript
 
 filter:
-    paths: ["app/app/Http/Controllers/*", "app/app/Models/*", "app/app/Dice/*","app/app/Yatzy/*", "app/app/Traits/*", "app/routes/web.php"]
-    excluded_paths: ["app/vendor/*", "app/build/*", "app/database/*", "app/tests/*"]
+    paths: [app/app/Dice/*,
+            app/app/Models/*,
+            app/app/Traits/*,
+            app/app/Yatzy/*,
+            app/app/Http/Controllers/*,
+            app/routes/web.php]
+
+    excluded_paths: [app/database/*,
+                     app/tests/*]
+
+    dependency_paths: [app/build/*,
+                       app/vendor/*]
 
 checks:
     php: true
-    javascript: true
 
 build:
     nodes:
         analysis:
+            project_setup:
+                override:
+                    - true
+            tests:
+                override:
+                    - php-scrutinizer-run --enable-security-analysis
             environment:
                 php:
                     version: 8.0
@@ -22,7 +36,7 @@ build:
             - cd app/
         override:
             - true
-                - command: make test
-                - coverage:
+                  - command: make install test
+                  coverage:
                       file: build/coverage.clover
-                      format: clover
+                      format: php-clover
