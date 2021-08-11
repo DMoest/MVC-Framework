@@ -129,7 +129,6 @@ class YatzyController extends Controller
 
         /* Play game */
         $yatzy->play($submit);
-        $this->scoreBoard = $yatzy->printYatzyScoreBoard();
 
         // Return the redirect through parent class ControllerBase destination depends on number of rolls.
         if ($player->getRolls() < 3) {

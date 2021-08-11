@@ -57,7 +57,7 @@ class DiceGame21Controller extends Controller
         }
 
         /* Create new DiceGame object on SESSION variable */
-        $diceGame = new DiceGame21($players, $startCredit, $machine);
+        $diceGame = new DiceGame21($players, $startCredit, boolval($machine));
         session()->put('diceGame21', $diceGame);
 
         return redirect(url("/dice/view"));
@@ -116,7 +116,6 @@ class DiceGame21Controller extends Controller
         $players = $diceGame->getPlayers();
         $playerIndex = $diceGame->getPlayerIndex();
         $diceGame->playGame($dices, $submit);
-        $scoreBoard = $diceGame->printDiceScoreBoard();
 
         // Return the redirect depending on where we are in this round.
         if ($playerIndex !== array_key_last($players)) {
@@ -135,8 +134,6 @@ class DiceGame21Controller extends Controller
     final public function viewResult(): View
     {
         $diceGame = session()->get("diceGame21");
-        $players = $diceGame->getPlayers();
-        $player = $players[$diceGame->getPlayerIndex()];
 
         $data = [
             "header" => "DiceGame 21 - Results",

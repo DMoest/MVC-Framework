@@ -4,6 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+
+
 
 class Book extends Model
 {
@@ -34,9 +37,9 @@ class Book extends Model
 
     /**
      * Getter method to return Author of the book. Book belongs to Author relationship.
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
-    public function author()
+    public function author(): BelongsTo
     {
         return $this->belongsTo(Author::class, 'author_id');
     }
@@ -44,9 +47,9 @@ class Book extends Model
 
     /**
      * Getter method to return Publisher of the book. Book belongs to Publisher relationship.
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
-    public function publisher()
+    public function publisher(): BelongsTo
     {
         return $this->belongsTo(Publisher::class, 'publisher_id');
     }
@@ -54,20 +57,10 @@ class Book extends Model
 
     /**
      * Getter method to return Category of Book. Book belongs to Category relationship.
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
-    public function category()
+    public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class, 'category_id');
     }
-
-//
-//    /**
-//     *
-//     * @return string
-//     */
-//    public function getRouteKeyName()
-//    {
-//        return 'id';
-//    }
 }

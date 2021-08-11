@@ -29,7 +29,7 @@ class Category extends Model
 
     /**
      * Getter method to return books in category. Category has many books relationship.
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
     public function books(): HasMany
     {

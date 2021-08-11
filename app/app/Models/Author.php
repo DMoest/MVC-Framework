@@ -31,7 +31,7 @@ class Author extends Model
 
     /**
      * Getter method to return Books from Author. Authors has many books relationship (at least a 'can have many').
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
     public function books(): HasMany
     {
@@ -41,7 +41,7 @@ class Author extends Model
 
     /**
      * Getter method to return Books from Author. Authors has many books relationship (at least a 'can have many').
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
     public function publisher(): BelongsTo
     {

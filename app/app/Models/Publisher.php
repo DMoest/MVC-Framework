@@ -21,7 +21,7 @@ class Publisher extends Model
 
     /**
      * Getter method to return Books published from Publisher. Publisher has many Books relationship.
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
     public function books(): HasMany
     {
@@ -31,21 +31,10 @@ class Publisher extends Model
 
     /**
      * Getter method to return Authors publishing with Publisher. Publisher has many Authors relationship.
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
     public function authors(): HasMany
     {
         return $this->hasMany(Author::class);
     }
-
-
-
-//    /**
-//     *
-//     * @return string
-//     */
-//    public function getRouteKeyName()
-//    {
-//        return 'id';
-//    }
 }

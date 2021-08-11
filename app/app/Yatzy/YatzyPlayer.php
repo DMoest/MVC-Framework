@@ -67,7 +67,7 @@ class YatzyPlayer extends Player implements YatzyPlayerInterface
      */
     final public function getRolls(): int
     {
-        return $this->rolls;
+        return intval($this->rolls);
     }
 
 
@@ -78,7 +78,7 @@ class YatzyPlayer extends Player implements YatzyPlayerInterface
      */
     final public function getScore(): int
     {
-        return array_sum($this->lastRoll);
+        return intval(array_sum($this->lastRoll));
     }
 
 
@@ -100,7 +100,7 @@ class YatzyPlayer extends Player implements YatzyPlayerInterface
      */
     final public function getPlayerScoreSum(): int
     {
-        return array_sum($this->playerScores);
+        return intval(array_sum($this->playerScores));
     }
 
 

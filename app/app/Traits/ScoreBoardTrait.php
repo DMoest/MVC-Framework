@@ -114,7 +114,7 @@ trait ScoreBoardTrait
             $scoreBoard .= "<h4>Player ".($key + 1)."</h4>";
 
             /* Add graphic dices to scoreboard */
-            foreach ($graphicDices as $key => $diceClass) {
+            foreach ($graphicDices as $diceClass) {
                 $scoreBoard .= "<span class=\"dice-utf8\">";
                 $scoreBoard .= "<i class=".$diceClass."></i>";
                 $scoreBoard .= "</span>";
