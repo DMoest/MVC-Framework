@@ -76,7 +76,7 @@ class Player implements PlayerInterface
     public function getSumTotal(): int
     {
         /* Set sum total */
-        $this->sum = array_sum($this->results);
+        $this->sum = intval(array_sum($this->results));
 
         /* Get sum total */
         return $this->sum;

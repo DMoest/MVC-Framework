@@ -26,11 +26,11 @@ trait ScoreBoardTrait
     final public function printDiceScoreBoard(): string
     {
         /* Setup score board outer container element */
-        $this->numOfPlayers = count($this->players);
+        $numOfPlayers = count($this->players);
         $scoreBoard = "<div class=\"flex flex-row justify-between gap-1 md:gap-4\">";
 
         /* Generate inner elements for scores */
-        for ($i = 0; $i < $this->numOfPlayers; $i++) {
+        for ($i = 0; $i < $numOfPlayers; $i++) {
 
             /* Get the player */
             $player = $this->players[$i];
@@ -102,12 +102,12 @@ trait ScoreBoardTrait
         foreach ($this->players as $key => $player) {
 
             /* Results as string */
-            $playerNumber = $this->getPlayerIndex() +1;
+            $playerNumber = $this->/** @scrutinizer ignore-call */getPlayerIndex() +1;
             $sum = $player->getScore();
             $average = $player->getAverage();
             $totalScore = $player->getPlayerScoreSum();
             $diceHand = $player->getDiceHand();
-            $graphicDices = $this->showGraphicDices($diceHand);
+            $graphicDices = $this->/** @scrutinizer ignore-call */showGraphicDices($diceHand);
 
             /* Build elements */
             $scoreBoard .= "<div class=\"diceForm__results--player-" . $key . "\">";
