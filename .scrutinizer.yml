@@ -3,8 +3,8 @@ imports:
     - javascript
 
 filter:
-    paths: ["app/*"]
-    excluded_paths: ["/vendor/*", "/build/*", "/database/*", "/test/*"]
+    paths: ["app/app/Http/Controllers/*", "app/app/Models/*", "app/app/Dice/*","app/app/Yatzy/*", "app/app/Traits/*", "app/routes/web.php"]
+    excluded_paths: ["app/vendor/*", "app/build/*", "app/database/*", "app/tests/*"]
 
 checks:
     php: true
@@ -22,7 +22,7 @@ build:
             - cd app/
         override:
             - true
-                  - command: make test
-                  - coverage:
-                        file: build/coverage.clover
-                        format: clover
+                - command: make test
+                - coverage:
+                      file: build/coverage.clover
+                      format: clover
