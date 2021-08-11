@@ -19,7 +19,10 @@
 
     <coverage processUncoveredFiles="true">
         <include>
-            <directory suffix=".php">./app</directory>
+            <directory suffix=".php">./app/Dice</directory>
+            <directory suffix=".php">./app/Traits</directory>
+            <directory suffix=".php">./app/Yatzy</directory>
+            <directory suffix=".php">./app/Http/Controllers</directory>
         </include>
 
         <report>
