@@ -11,10 +11,11 @@ namespace Daap19\Dice;
  * Interface DicePlayerInterface
  * @package daap19\Yatzy
  * @property int $credit
- * @property ?int $wins
+ * @property int $wins
  * @property bool $stopped
- * @property ?bool $bust
- * @property ?bool $out
+ * @property bool $bust
+ * @property bool $out
+ * @property bool $winner
  * @property bool $machine
  */
 interface DicePlayerInterface

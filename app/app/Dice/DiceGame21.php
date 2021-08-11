@@ -5,7 +5,7 @@
  */
 namespace Daap19\Dice;
 use Daap19\Traits\ScoreBoardTrait;
-use function PHPUnit\Framework\isTrue;
+
 
 
 /**
@@ -352,7 +352,6 @@ class DiceGame21
     {
         $count = 0;
         $stillInTheGame = [];
-        $countPlayers = count($this->players);
 
         foreach ($this->players as $player) {
             $credit = $player->getCredit();

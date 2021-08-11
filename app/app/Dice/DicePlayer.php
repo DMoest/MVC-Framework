@@ -20,8 +20,8 @@ class DicePlayer extends Player implements DicePlayerInterface
     private int $credit;
     private int $wins;
     private bool $stopped;
-    private ?bool $bust;
-    private ?bool $out;
+    private bool $bust;
+    private bool $out;
     private bool $winner;
     private bool $machine;
 

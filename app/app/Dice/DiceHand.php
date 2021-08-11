@@ -118,7 +118,7 @@ class DiceHand implements DiceHandInterface
      */
     final public function getSum(): int
     {
-        return array_sum($this->lastRoll);
+        return intval(array_sum($this->lastRoll));
     }
 
 
