@@ -73,7 +73,7 @@ class YatzyController extends Controller
             "selectScoresURL" => url("/yatzy__selectScores/view"),
             "round" => $yatzy->getRound(),
             "playerRolls" => $player->getRolls(),
-            "playerNumber" => $yatzy->getPlayerIndex() +1,
+            "playerNumber" => $yatzy->getPlayerIndex() + 1,
         ];
 
         if ($diceHand !== null) {
@@ -155,7 +155,7 @@ class YatzyController extends Controller
             "message" => "Select where on the chart to place your points. Once your points for this round have been placed you can not place more points to this position. Try to make strategic placement for a higher sum total as your end result.",
             "action" => url("/yatzy/select/process"),
             "round" => $yatzy->getRound(),
-            "playerNumber" => $yatzy->getPlayerIndex() +1,
+            "playerNumber" => $yatzy->getPlayerIndex() + 1,
             "graphicDices" => $yatzy->showGraphicDices($player->getDiceHand()),
             "scoreBoard" => $yatzy->printYatzyScoreBoard(),
             "scoreSelection" => $yatzy->scoreSelection(),
@@ -233,7 +233,7 @@ class YatzyController extends Controller
             "message" => "You have compleated this part of the game and here are your current scores.",
             "action" => url("/yatzy/result/process"),
             "round" => $yatzy->getRound(),
-            "playerNumber" => $yatzy->getPlayerIndex() +1,
+            "playerNumber" => $yatzy->getPlayerIndex() + 1,
             "scoreBoard" => $yatzy->printYatzyScoreBoard(),
             "playerScores" => $player->getPlayerScore(),
             "scoreSum" => $player->getPlayerScoreSum(),

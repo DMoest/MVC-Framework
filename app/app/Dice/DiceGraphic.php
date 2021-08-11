@@ -32,6 +32,6 @@ class DiceGraphic extends Dice
      */
     public function graphicDice(): string
     {
-        return "dice-" . $this->getLastRoll();
+        return "dice-".$this->getLastRoll();
     }
 }

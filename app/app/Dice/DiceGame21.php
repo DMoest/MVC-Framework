@@ -208,7 +208,7 @@ class DiceGame21
      */
     final public function setNextPlayerIndex(): void
     {
-        $lastIndex = count($this->players) -1;
+        $lastIndex = count($this->players) - 1;
         $out = 1;
 
         /* Aborts loop on false value from check isOut() */
@@ -297,7 +297,7 @@ class DiceGame21
             if (intval($player->isOut()) !== 1) {
                 $oldCredit = $this->players[$i]->getCredit();
                 $theBet += 5;
-                $newCredit = ($oldCredit -5);
+                $newCredit = ($oldCredit - 5);
                 $this->players[$i]->setCredit($newCredit);
             }
         }

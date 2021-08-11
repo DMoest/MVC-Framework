@@ -47,21 +47,21 @@ trait ScoreBoardTrait
 
             /* Build elements */
             $scoreBoard .= "<div class='w-full p-2 md:p-4 border-solid border-2 border-gray-400 rounded bg-blue-100'>";
-            $scoreBoard .= "<h4 class='pb-2 font-weight-bold'>Player " . ($i +1) . "</h4>";
+            $scoreBoard .= "<h4 class='pb-2 font-weight-bold'>Player ".($i + 1)."</h4>";
 
             /* Only add elements if player have results */
             if ($totalScore > 0) {
                 $scoreBoard .= "<p>$stringRes</p>";
-                $scoreBoard .= "<p>Average dice value = " . $average . "</p>";
-                $scoreBoard .= "<p>Player " . ($i+1) . " score = " . $totalScore . "</p>";
+                $scoreBoard .= "<p>Average dice value = ".$average."</p>";
+                $scoreBoard .= "<p>Player ".($i + 1)." score = ".$totalScore."</p>";
             }
 
             /* Remaining credit for this player */
-            $scoreBoard .= "<p class='pt-4'>Credit: " . $playerCredit . "</p>";
+            $scoreBoard .= "<p class='pt-4'>Credit: ".$playerCredit."</p>";
 
             /* If there are winning round print them */
             if ($playerWins > 0) {
-                $scoreBoard .= "<p>Winning rounds: " . $playerWins . "</p>";
+                $scoreBoard .= "<p>Winning rounds: ".$playerWins."</p>";
             }
 
             /* Print message if player have stopped or is bust. */
@@ -102,7 +102,7 @@ trait ScoreBoardTrait
         foreach ($this->players as $key => $player) {
 
             /* Results as string */
-            $playerNumber = $this->/** @scrutinizer ignore-call */getPlayerIndex() +1;
+            $playerNumber = $this->/** @scrutinizer ignore-call */getPlayerIndex() + 1;
             $sum = $player->getScore();
             $average = $player->getAverage();
             $totalScore = $player->getPlayerScoreSum();
@@ -110,23 +110,22 @@ trait ScoreBoardTrait
             $graphicDices = $this->/** @scrutinizer ignore-call */showGraphicDices($diceHand);
 
             /* Build elements */
-            $scoreBoard .= "<div class=\"diceForm__results--player-" . $key . "\">";
-            $scoreBoard .= "<h4>Player " . ($key +1) . "</h4>";
+            $scoreBoard .= "<div class=\"diceForm__results--player-".$key."\">";
+            $scoreBoard .= "<h4>Player ".($key + 1)."</h4>";
 
             /* Add graphic dices to scoreboard */
             foreach ($graphicDices as $key => $diceClass) {
                 $scoreBoard .= "<span class=\"dice-utf8\">";
-                $scoreBoard .= "<i class=" . $diceClass . "></i>";
+                $scoreBoard .= "<i class=".$diceClass."></i>";
                 $scoreBoard .= "</span>";
             }
 
-
-            $scoreBoard .= "<p>Dice hand sum total: <b>" . $sum . "</b></p>";
-            $scoreBoard .= "<p>Player rolls an average dice value of: <b>" . $average . "</b></b></p>";
+            $scoreBoard .= "<p>Dice hand sum total: <b>".$sum."</b></p>";
+            $scoreBoard .= "<p>Player rolls an average dice value of: <b>".$average."</b></b></p>";
 
             /* Only add element if player have results */
             if ($totalScore > 0) {
-                $scoreBoard .= "<p>Player " . $playerNumber . " game score: <b>" . $totalScore . "</b></p>";
+                $scoreBoard .= "<p>Player ".$playerNumber." game score: <b>".$totalScore."</b></p>";
             }
 
             /* Close the player container div element */

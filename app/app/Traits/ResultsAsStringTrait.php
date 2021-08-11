@@ -24,10 +24,10 @@ trait ResultsAsStringTrait
         $outputString = "";
 
         foreach ($this->results as $key => $diceValue) {
-            if ($key < $numberOfDices -1) {
-                $outputString .= $diceValue . ", ";
-            } else if ($key === $numberOfDices -1) {
-                $outputString .= $diceValue . " = " . array_sum($this->results);
+            if ($key < $numberOfDices - 1) {
+                $outputString .= $diceValue.", ";
+            } else if ($key === $numberOfDices - 1) {
+                $outputString .= $diceValue." = ".array_sum($this->results);
             }
         }
 
@@ -46,10 +46,10 @@ trait ResultsAsStringTrait
         $lastRollString = "";
 
         foreach ($this->lastRoll as $key => $diceValue) {
-            if ($key < $numberOfDices -1) {
-                $lastRollString .= $diceValue . ", ";
-            } else if ($key === $numberOfDices -1) {
-                $lastRollString .= $diceValue . " = " . array_sum($this->lastRoll);
+            if ($key < $numberOfDices - 1) {
+                $lastRollString .= $diceValue.", ";
+            } else if ($key === $numberOfDices - 1) {
+                $lastRollString .= $diceValue." = ".array_sum($this->lastRoll);
             }
         }
 

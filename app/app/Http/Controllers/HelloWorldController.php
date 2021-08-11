@@ -12,7 +12,7 @@ class HelloWorldController extends Controller
      * @param  string  $message
      * @return \Illuminate\View\View
      */
-    public function hello($message=null)
+    public function hello($message = null)
     {
         return view('message', [
             'message' => $message ?? "Hello World as default from within controller"
