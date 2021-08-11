@@ -28,7 +28,7 @@ use App\Http\Controllers\LibraryController;
  * Laravel original example route
  * --------------------------------------------------
  */
-Route::get('/', function () {
+Route::get('/', function() {
     return view('welcome');
 })->name('index');
 
@@ -38,10 +38,10 @@ Route::get('/', function () {
  * Mikael example routes
  * --------------------------------------------------
  */
-Route::get('/hello-world', function () {
+Route::get('/hello-world', function() {
     echo "Hello World";
 });
-Route::get('/hello-world-view', function () {
+Route::get('/hello-world-view', function() {
     return view('message', [
         'message' => "Hello World from within a view"
     ]);
