@@ -210,4 +210,22 @@ class DicePlayerTest extends TestCase
         $this->assertIsBool($stopped);
         $this->assertTrue($stopped);
     }
+
+
+    /**
+     * @description Test DicePlayer setWinner method and isWinner method.
+     */
+    final public function testPlayerSetWinner(): void
+    {
+        $winner = $this->player->isWinner();
+
+        $this->assertIsBool($winner);
+        $this->assertFalse($winner);
+
+        $this->player->setWinner();
+        $winner = $this->player->isWinner();
+
+        $this->assertIsBool($winner);
+        $this->assertTrue($winner);
+    }
 }

@@ -147,4 +147,37 @@ class DiceGameLogicMethodsTest extends TestCase
         $this->assertTrue($stopped);
         $this->assertEmpty($results);
     }
+
+    final public function testCheckAllPlayersCredit(): void
+    {
+        $players = $this->diceGame->getPlayers();
+        $outOfTheGame = $this->diceGame->checkAllPlayersCredit();
+
+        $this->assertIsInt($outOfTheGame);
+        $this->assertEquals(0, $outOfTheGame);
+
+        $players[0]->setCredit(0);
+
+        $outOfTheGame = $this->diceGame->checkAllPlayersCredit();
+
+        $this->assertIsInt($outOfTheGame);
+        $this->assertEquals(1, $outOfTheGame);
+
+        $winner = $players[1]->isWinner();
+        $looser = $players[0]->isWinner();
+
+        $this->assertIsBool($winner);
+        $this->assertTrue($winner);
+        $this->assertIsBool($looser);
+        $this->assertFalse($looser);
+
+        foreach ($players as $player) {
+            $player->setCredit(0);
+        }
+
+        $outOfTheGame = $this->diceGame->checkAllPlayersCredit();
+
+        $this->assertIsInt($outOfTheGame);
+        $this->assertEquals(2, $outOfTheGame);
+    }
 }
