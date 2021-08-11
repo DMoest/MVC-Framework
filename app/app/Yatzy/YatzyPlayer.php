@@ -114,7 +114,7 @@ class YatzyPlayer extends Player implements YatzyPlayerInterface
     public function saveScores(array $lastHand, int $referenceValue): void
     {
         $counter = 0;
-        $scoreIndex = $referenceValue -1;
+        $scoreIndex = $referenceValue - 1;
 
         /* Check the dice hand of the player for equal */
         foreach ($lastHand as $diceValue) {

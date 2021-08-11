@@ -101,13 +101,13 @@ class DiceHand implements DiceHandInterface
 
         /* Build string from results */
         foreach ($this->lastRoll as $dice) {
-            $response .= $dice . ", ";
+            $response .= $dice.", ";
         }
 
         /* Trim last two characters off */
-        $response = substr($response, 0, strlen($response)-2);
+        $response = substr($response, 0, strlen($response) - 2);
 
-        return $response . " = " . array_sum($this->lastRoll);
+        return $response." = ".array_sum($this->lastRoll);
     }
 
 

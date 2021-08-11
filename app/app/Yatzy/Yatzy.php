@@ -136,7 +136,7 @@ class Yatzy
      */
     final public function setPlayerIndex(): void
     {
-        $lastIndex = (count($this->players) -1);
+        $lastIndex = (count($this->players) - 1);
 
         /* Sort out status */
         if ($this->playerIndex < $lastIndex) {
@@ -199,11 +199,11 @@ class Yatzy
 
         foreach ($playerScores as $key => $score) {
             if ($score === null) {
-                $outputString .= "<label class='yatzyForm__input--label' for='" . $key . "'>";
-                $outputString .= "<input class='yatzyForm__input--radio' type='radio' name='scoreSelect' id='" . $key . "' value='" . $key . "' /> ";
-                $outputString .= "<i class='dice-utf8 dice-" . ($key+1) . "'></i> " . $yatzyScoreNames[$key] . " </label><br> ";
+                $outputString .= "<label class='yatzyForm__input--label' for='".$key."'>";
+                $outputString .= "<input class='yatzyForm__input--radio' type='radio' name='scoreSelect' id='".$key."' value='".$key."' /> ";
+                $outputString .= "<i class='dice-utf8 dice-".($key + 1)."'></i> ".$yatzyScoreNames[$key]." </label><br> ";
             } elseif (is_int($score)) {
-                $outputString .= "<p><i class='dice-utf8 dice-" . ($key+1) . "'></i> " . $yatzyScoreNames[$key] . " : " . $score . " points</p>";
+                $outputString .= "<p><i class='dice-utf8 dice-".($key + 1)."'></i> ".$yatzyScoreNames[$key]." : ".$score." points</p>";
             }
         }
 

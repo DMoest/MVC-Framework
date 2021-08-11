@@ -52,7 +52,7 @@ class DiceGame21Controller extends Controller
 
         if (isset($input["machine"])) {
             $machine = boolval($input["machine"]);
-        } elseif(!isset($input["machine"])) {
+        } elseif (!isset($input["machine"])) {
             $machine = false;
         }
 
@@ -88,7 +88,7 @@ class DiceGame21Controller extends Controller
             "score" => $player->getSumTotal(),
             "credit" => $credit,
             "numberOfPlayers" => count($diceGame->getPLayers()),
-            "playerNumber" => $diceGame->getPlayerIndex() +1,
+            "playerNumber" => $diceGame->getPlayerIndex() + 1,
             "graphicDices" => $graphicDices,
             "scoreBoard" => $diceGame->printDiceScoreBoard(),
         ];
@@ -119,7 +119,7 @@ class DiceGame21Controller extends Controller
         $scoreBoard = $diceGame->printDiceScoreBoard();
 
         // Return the redirect depending on where we are in this round.
-        if($playerIndex !== array_key_last($players)) {
+        if ($playerIndex !== array_key_last($players)) {
             return redirect(url("/dice/view"));
         }
 
@@ -144,7 +144,7 @@ class DiceGame21Controller extends Controller
             "action" => url("/dice/result/process"),
             "round" => $diceGame->getRound(),
             "players" => $diceGame->getPlayers(),
-            "playerNumber" => $diceGame->getPLayerIndex() +1,
+            "playerNumber" => $diceGame->getPLayerIndex() + 1,
             "scoreBoard" => $diceGame->printDiceScoreBoard(),
         ];
 
@@ -164,7 +164,7 @@ class DiceGame21Controller extends Controller
         $playersOutOfTheGame = $diceGame->checkAllPlayersCredit();
         $numberOfPlayers = count($diceGame->getPlayers());
 
-        if ($playersOutOfTheGame < $numberOfPlayers-1) {
+        if ($playersOutOfTheGame < $numberOfPlayers - 1) {
             return redirect(url("/dice/view"));
         }
 
