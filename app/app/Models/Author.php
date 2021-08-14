@@ -41,7 +41,7 @@ class Author extends Model
 
     /**
      * Getter method to return Books from Author. Authors has many books relationship (at least a 'can have many').
-     * @return HasMany
+     * @return BelongsTo
      */
     public function publisher(): BelongsTo
     {

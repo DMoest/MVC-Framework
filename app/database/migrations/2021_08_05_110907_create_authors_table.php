@@ -13,7 +13,7 @@ class CreateAuthorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('authors', function (Blueprint $table) {
+        Schema::create('authors', function(Blueprint $table) {
             $table->id()->unique();
             $table->string('name')->unique();
             $table->foreignId('publisher_id');

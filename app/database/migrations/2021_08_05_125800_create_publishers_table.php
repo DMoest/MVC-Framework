@@ -13,7 +13,7 @@ class CreatePublishersTable extends Migration
      */
     public function up()
     {
-        Schema::create('publishers', function (Blueprint $table) {
+        Schema::create('publishers', function(Blueprint $table) {
             $table->id()->unique();
             $table->string('name')->unique();
             $table->timestamps();

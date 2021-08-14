@@ -50,10 +50,10 @@ class YatzyPlayerScoreHandlersTest extends TestCase
         /* Test case assertions */
         $this->assertIsIterable($savedScores);
         $this->assertIsArray($savedScores);
-        $this->assertArrayHasKey($referenceValue -1, $savedScores);
+        $this->assertArrayHasKey($referenceValue - 1, $savedScores);
 
         foreach ($savedScores as $key => $score) {
-            if ($key !== $referenceValue-1) {
+            if ($key !== $referenceValue - 1) {
                 $this->assertNull($score);
             } elseif ($key === $referenceValue-1) {
                 $this->assertIsInt($score);
@@ -77,12 +77,12 @@ class YatzyPlayerScoreHandlersTest extends TestCase
         /* Test case assertions */
         $this->assertIsIterable($savedScores);
         $this->assertIsArray($savedScores);
-        $this->assertArrayHasKey($referenceValue -1, $savedScores);
+        $this->assertArrayHasKey($referenceValue - 1, $savedScores);
 
         foreach ($savedScores as $key => $score) {
-            if ($key !== $referenceValue-1) {
+            if ($key !== $referenceValue - 1) {
                 $this->assertNull($score);
-            } elseif ($key === $referenceValue-1) {
+            } elseif ($key === $referenceValue - 1) {
                 $this->assertIsInt($score);
                 $this->assertEquals(9, $score);
             }
@@ -146,7 +146,7 @@ class YatzyPlayerScoreHandlersTest extends TestCase
         /* Test case assertions */
         $this->assertIsIterable($savedScores);
         $this->assertIsArray($savedScores);
-        $this->assertArrayHasKey($referenceValue -1, $savedScores);
-        $this->assertEquals($referenceValue, ($savedScores[$referenceValue-1] / $occurrence));
+        $this->assertArrayHasKey($referenceValue - 1, $savedScores);
+        $this->assertEquals($referenceValue, ($savedScores[$referenceValue - 1] / $occurrence));
     }
 }

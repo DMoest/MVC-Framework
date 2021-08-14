@@ -13,7 +13,7 @@ class CreateHighscoreYatziesTable extends Migration
      */
     public function up()
     {
-        Schema::create('highscore_yatzies', function (Blueprint $table) {
+        Schema::create('highscore_yatzies', function(Blueprint $table) {
             $table->id()->unique();
             $table->string('name');
             $table->integer('score');

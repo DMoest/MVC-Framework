@@ -24,9 +24,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         /* --- Truncate / Removes data / Clears before seeding --- */
-        \App\Models\User::truncate();
-        \App\Models\Category::truncate();
-        \App\Models\Book::truncate();
+        User::truncate();
+        Category::truncate();
+        Book::truncate();
 
 
 
@@ -54,9 +54,6 @@ class DatabaseSeeder extends Seeder
             'email' => 'hulu@example.com',
             'password' => bcrypt('myPassword'),
         ]);
-
-
-
 
 
 

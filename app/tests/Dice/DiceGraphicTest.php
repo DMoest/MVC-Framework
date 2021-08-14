@@ -58,7 +58,7 @@ class DiceGraphicTest extends TestCase
         /* setup test case */
         $this->dice->roll();
         $graphicDice = $this->dice->graphicDice();
-        $expected = "dice-" . $this->dice->getLastRoll();
+        $expected = "dice-".$this->dice->getLastRoll();
 
         /* test case assertions */
         $this->assertIsString($graphicDice);
