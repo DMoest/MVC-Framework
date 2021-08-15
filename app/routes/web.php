@@ -104,34 +104,7 @@ Route::get('/dice/finalResult/view', [DiceGame21Controller::class, 'viewFinalRes
  * --------------------------------------------------
  */
 Route::get('/library', [LibraryController::class, 'viewLibrary'])->name('library');
-
-Route::get('/book/{book}', function(Book $book) {   //Book::where('id', $book)->firstOrFail()
-        return view('book', [
-            'book' => $book,
-        ]);
-    })->name('book');
-
-
-Route::get('/category/{category}', function(Category $category) {   //Book::where('id', $category)->firstOrFail()
-    return view('category', [
-        'category' => $category,
-        'books' => $category->books->load('author', 'publisher'),
-    ]);
-})->name('category');
-
-
-Route::get('/author/{author}', function(Author $author) {   //Book::where('id', $author)->firstOrFail()
-    return view('author', [
-        'author' => $author,
-        'books' => $author->books->load('category', 'publisher'),
-    ]);
-})->name('author');
-
-
-Route::get('/publisher/{publisher}', function(Publisher $publisher) {   //Book::where('id', $publisher)->firstOrFail()
-    return view('publisher', [
-        'publisher' => $publisher,
-        'authors' => $publisher->authors->load('books'),
-        'books' => $publisher->books->load('author', 'category'),
-    ]);
-})->name('publisher');
+Route::get('/book/{book}', [LibraryController::class, 'viewBook'])->name('book');
+Route::get('/category/{category}', [LibraryController::class, 'viewCategory'])->name('category');
+Route::get('/author/{author}', [LibraryController::class, 'viewAuthor'])->name('author');
+Route::get('/publisher/{publisher}', [LibraryController::class, 'viewPublisher'])->name('publisher');
