@@ -37,9 +37,10 @@ class YatzyTest extends TestCase
 
 
     /**
+     * @test
      * @description Test YatzyPlayer object construct method.
      */
-    final public function testYatzyConstruct(): void
+    final public function test_Yatzy_Construct(): void
     {
         $this->assertIsObject($this->yatzy);
         $this->assertInstanceOf("daap19\Yatzy\Yatzy", $this->yatzy);
@@ -64,9 +65,10 @@ class YatzyTest extends TestCase
 
 
     /**
+     * @test
      * @description Test Yatzy method getRound.
      */
-    final public function testYatzyGetRound(): void
+    final public function test_Yatzy_Get_Round(): void
     {
         /* Setup test case */
         $round = $this->yatzy->getRound();
@@ -78,9 +80,10 @@ class YatzyTest extends TestCase
 
 
     /**
+     * @test
      * @description Test Yatzy method getPlayers.
      */
-    final public function testYatzyGetPlayers(): void
+    final public function test_Yatzy_Get_Players(): void
     {
         /* Setup test case */
         $players = $this->yatzy->getPlayers();
@@ -94,9 +97,10 @@ class YatzyTest extends TestCase
 
 
     /**
+     * @test
      * @description Test Yatzy method getPlayerIndex.
      */
-    final public function testYatzyGetPlayerIndex(): void
+    final public function test_Yatzy_Get_Player_Index(): void
     {
         /* Setup test case */
         $index = $this->yatzy->getPlayerIndex();
@@ -111,9 +115,10 @@ class YatzyTest extends TestCase
 
 
     /**
+     * @test
      * @description Test Yatzy method setPlayerIndex.
      */
-    final public function testYatzySetPlayerIndex(): void
+    final public function test_Yatzy_Set_Player_Index(): void
     {
         $this->yatzy = new Yatzy(3);
 
@@ -148,9 +153,10 @@ class YatzyTest extends TestCase
 
 
     /**
+     * @test
      * @description Test Yatzy method setPlayerIndex.
      */
-    final public function testYatzyShowGraphicDices(): void
+    final public function test_Yatzy_Show_Graphic_Dices(): void
     {
         /* Setup test case */
         $this->yatzy->play("roll");
@@ -166,9 +172,10 @@ class YatzyTest extends TestCase
 
 
     /**
+     * @test
      * @description Test Yatzy method selectScores without saved scores.
      */
-    final public function testYatzyScoreSelectionNoScores(): void
+    final public function test_Yatzy_Score_Selection_No_Scores(): void
     {
         /* Setup test case */
         $this->yatzy->play("roll");
@@ -183,9 +190,10 @@ class YatzyTest extends TestCase
 
 
     /**
+     * @test
      * @description Test Yatzy method selectScores with saved scores.
      */
-    final public function testYatzyScoreSelectionWithScores(): void
+    final public function test_Yatzy_Score_Selection_With_Scores(): void
     {
         /* Setup test case */
         $this->yatzy->play("roll");

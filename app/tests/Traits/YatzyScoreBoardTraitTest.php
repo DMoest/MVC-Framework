@@ -33,9 +33,10 @@ class YatzyScoreBoardTraitTest extends TestCase
 
 
     /**
+     * @test
      * @description Test Yatzy class with trait ScoreBoardTrait with method printYatzyScoreBoard.
      */
-    final public function testYatzyTraitPrintScoreBoardMethod(): void
+    final public function test_Yatzy_Trait_Print_ScoreBoard_Method(): void
     {
         /* setup test case */
         $player = $this->yatzy->getCurrentPlayer();

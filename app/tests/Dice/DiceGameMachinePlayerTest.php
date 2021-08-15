@@ -34,9 +34,10 @@ class DiceGameMachinePlayerTest extends TestCase
 
 
     /**
+     * @test
      * @description Test DiceGame class construct method with machine player. Test properties initial values with expectence of last player as machine in the players array.
      */
-    final public function testDiceGameConstructMachinePlayer(): void
+    final public function test_DiceGame_Construct_Machine_Player(): void
     {
         /* Setup test case */
         $players = $this->diceGame->getPlayers();
@@ -66,15 +67,15 @@ class DiceGameMachinePlayerTest extends TestCase
 
 
     /**
+     * @test
      * @description Test DiceGame method playGame for machine player.
      */
-    final public function testDiceGamePlayGameMachinePlayer(): void
+    final public function test_DiceGame_Play_Game_Machine_Player(): void
     {
         /* Setup test case */
         $players = $this->diceGame->getPlayers();
         $this->diceGame->setNextPlayerIndex();
-        $this->diceGame->setNextPlayerIndex(); // Should make player machine player in this case.
-//        $this->diceGame->playGame(2, "roll");
+        $this->diceGame->setNextPlayerIndex();
 
         $index = $this->diceGame->getPlayerIndex();
         $player = $players[$index];
@@ -88,9 +89,10 @@ class DiceGameMachinePlayerTest extends TestCase
 
 
     /**
+     * @test
      * @description Test DiceGame method playComputer.
      */
-    final public function testDiceMachnePlayerMethodPlayComputer(): void
+    final public function test_DiceMachne_Player_Method_Play_Computer(): void
     {
         /* Setup test case */
         $players = $this->diceGame->getPlayers();

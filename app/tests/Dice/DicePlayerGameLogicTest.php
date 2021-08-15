@@ -34,9 +34,10 @@ class DicePlayerGameLogicTest extends TestCase
 
 
     /**
+     * @test
      * @description Test DicePlayer setCredit method functionality.
      */
-    final public function testDicePlayerSetCredit(): void
+    final public function test_DicePlayer_Set_Credit(): void
     {
         $credit1 = $this->player->getCredit();
         $credit2 = $credit1 * 3;
@@ -50,9 +51,10 @@ class DicePlayerGameLogicTest extends TestCase
 
 
     /**
+     * @test
      * @description Test DicePlayer setWins method return type after DicePlayer wins a game round.
      */
-    final public function testDicePlayerGetWinsAfterPlayerWin(): void
+    final public function test_DicePlayer_Get_Wins_After_Player_Win(): void
     {
         $this->player->setWin();
         $wins = $this->player->getWins();
@@ -62,9 +64,10 @@ class DicePlayerGameLogicTest extends TestCase
 
 
     /**
+     * @test
      * @description Test DicePlayer stop property after player stops.
      */
-    final public function testDicePlayerStop(): void
+    final public function test_DicePlayer_Stop(): void
     {
         $this->player->stop();
         $stopped = $this->player->hasStopped();
@@ -74,9 +77,10 @@ class DicePlayerGameLogicTest extends TestCase
 
 
     /**
+     * @test
      * @description Test DicePlayer bust property after player goes bust in a game round.
      */
-    final public function testDicePlayerGoingBust(): void
+    final public function test_DicePlayer_Going_Bust(): void
     {
         $this->player->setBust();
         $bust = $this->player->isBust();
@@ -86,9 +90,10 @@ class DicePlayerGameLogicTest extends TestCase
 
 
     /**
+     * @test
      * @description Test DicePlayer out property after player is out of the game.
      */
-    final public function testDicePlayerOutOfGame(): void
+    final public function test_DicePlayer_Out_Of_Game(): void
     {
         $this->player->setOut();
         $out = $this->player->isOut();
@@ -98,9 +103,10 @@ class DicePlayerGameLogicTest extends TestCase
 
 
     /**
+     * @test
      * @description Test DicePlayer set for next game round method.
      */
-    final public function testPlayerSetForNextRound(): void
+    final public function test_Player_Set_For_Next_Round(): void
     {
         $this->player = new DicePlayer(25, 1);
 
@@ -148,9 +154,10 @@ class DicePlayerGameLogicTest extends TestCase
 
 
     /**
+     * @test
      * @description Test DicePlayer set for next game round method if credit is zero.
      */
-    final public function testPlayerSetForNextRoundZeroCredit(): void
+    final public function test_Player_Set_For_Next_Round_Zero_Credit(): void
     {
         $this->player = new DicePlayer(25, 1);
 

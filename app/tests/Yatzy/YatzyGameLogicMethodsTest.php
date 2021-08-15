@@ -34,9 +34,10 @@ class YatzyGameLogicMethodsTest extends TestCase
 
 
     /**
+     * @test
      * @description Test Yatzy play method with argument "roll" simulating player move roll dices.
      */
-    final public function testYatzyPlayRollDices(): void
+    final public function test_Yatzy_Play_Roll_Dices(): void
     {
         /* Setup test case */
         $this->yatzy->play("roll");
@@ -50,9 +51,10 @@ class YatzyGameLogicMethodsTest extends TestCase
 
 
     /**
+     * @test
      * @description Test Yatzy play method with argument "stop" simulating player move stop.
      */
-    final public function testYatzyPlayStop(): void
+    final public function test_Yatzy_Play_Stop(): void
     {
         /* Setup test case */
         $player = $this->yatzy->getCurrentPlayer();
@@ -71,9 +73,10 @@ class YatzyGameLogicMethodsTest extends TestCase
 
 
     /**
+     * @test
      * @description Test Yatzy play method with argument "roll" simulating player move roll dices.
      */
-    final public function testYatzyPlayRollDicesThreeTimes(): void
+    final public function test_Yatzy_Play_Roll_Dices_Three_Times(): void
     {
         /* Setup test case */
         $this->yatzy = new Yatzy(2);
@@ -137,9 +140,10 @@ class YatzyGameLogicMethodsTest extends TestCase
 
 
     /**
+     * @test
      * @description Test Yatzy method setNextRound.
      */
-    final public function testYatzySetNextRound(): void
+    final public function test_Yatzy_Set_Next_Round(): void
     {
         /* Setup test case */
         $firstRound = $this->yatzy->getRound();

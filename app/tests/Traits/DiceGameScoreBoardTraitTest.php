@@ -33,9 +33,10 @@ class DiceGameScoreBoardTraitTest extends TestCase
 
 
     /**
+     * @test
      * @description Test DiceGame class with trait ScoreBoardTrait with method printDiceScoreBoard.
      */
-    final public function testDiceGamePrintScoreBoardMethod(): void
+    final public function test_DiceGame_Print_ScoreBoard_Method(): void
     {
         /* setup test case */
         $index = $this->diceGame->getPlayerIndex();
@@ -57,9 +58,10 @@ class DiceGameScoreBoardTraitTest extends TestCase
 
 
     /**
+     * @test
      * @description Test DiceGame class with trait ScoreBoardTrait with method printDiceScoreBoard, player has stopped.
      */
-    final public function testDiceGamePrintScoreBoardMethodPlayerStopped(): void
+    final public function test_DiceGame_Print_ScoreBoard_Method_Player_Stopped(): void
     {
         /* setup test case */
         $index = $this->diceGame->getPlayerIndex();
@@ -83,9 +85,10 @@ class DiceGameScoreBoardTraitTest extends TestCase
 
 
     /**
+     * @test
      * @description Test DiceGame class with trait ScoreBoardTrait with method printDiceScoreBoard, player has stopped.
      */
-    final public function testDiceGamePrintScoreBoardMethodPlayerHaveWon(): void
+    final public function test_DiceGame_Print_ScoreBoard_Method_Player_Have_Won(): void
     {
         /* setup test case */
         $index = $this->diceGame->getPlayerIndex();
@@ -109,9 +112,10 @@ class DiceGameScoreBoardTraitTest extends TestCase
 
 
     /**
+     * @test
      * @description Test DiceGame class with trait ScoreBoardTrait with method printDiceScoreBoard, player is bust.
      */
-    final public function testDiceGamePrintScoreBoardMethodPlayerBust(): void
+    final public function test_DiceGame_Print_ScoreBoard_Method_Player_Bust(): void
     {
         /* setup test case */
         $index = $this->diceGame->getPlayerIndex();

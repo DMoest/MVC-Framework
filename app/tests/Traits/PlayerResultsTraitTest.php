@@ -32,9 +32,10 @@ class PlayerResultsTraitTest extends TestCase
 
 
     /**
+     * @test
      * @description Test Player class with trait ResultsAsString with method getResultsAsString.
      */
-    final public function testPlayerTraitResultsAsStringMethod(): void
+    final public function test_Player_Trait_Results_As_String_Method(): void
     {
         /* Setup test case */
         $this->player->rollDices();
@@ -49,9 +50,10 @@ class PlayerResultsTraitTest extends TestCase
 
 
     /**
+     * @test
      * @description Test Player class with trait ResultsAsString with method getLastRollAsString.
      */
-    final public function testPlayerTraitLastRollAsStringMethod(): void
+    final public function test_Player_Trait_Last_Roll_As_String_Method(): void
     {
         /* setup test case */
         $this->player->rollDices();

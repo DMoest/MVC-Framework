@@ -34,9 +34,10 @@ class DiceHandTest extends TestCase
 
 
     /**
+     * @test
      * @description Test construct method for DiceHand class.
      */
-    final public function testDiceHandConstruct(): void
+    final public function test_DiceHand_Construct(): void
     {
         /* Setup test case */
         $dices = $this->diceHand->getDices();
@@ -77,9 +78,10 @@ class DiceHandTest extends TestCase
 
 
     /**
+     * @test
      * @description Test DiceHand method getDices.
      */
-    final public function testDiceHandGetDices(): void
+    final public function test_DiceHand_Get_Dices(): void
     {
         /* Setup test case */
         $diceHand2 = new DiceHand(13);
@@ -110,9 +112,10 @@ class DiceHandTest extends TestCase
 
 
     /**
-     * @description
+     * @test
+     * @description Test diceHand roll.
      */
-    final public function testDiceHandRoll(): void
+    final public function test_DiceHand_Roll(): void
     {
         /* setup test case */
         $diceHandRoll = $this->diceHand->roll();
@@ -128,9 +131,10 @@ class DiceHandTest extends TestCase
 
 
     /**
+     * @test
      * @description Test DiceHand getLastRoll method.
      */
-    final public function testDiceHandLastRoll(): void
+    final public function test_DiceHand_Last_Roll(): void
     {
         /* setup test case */
         $this->diceHand->roll();
@@ -148,9 +152,10 @@ class DiceHandTest extends TestCase
 
 
     /**
+     * @test
      * @description Test case for DiceHand getLastRollAsString() method.
      */
-    final public function testDiceHandLastRollAsString(): void
+    final public function test_DiceHand_Last_Roll_As_String(): void
     {
         /* setup test case */
         $this->diceHand->roll();
@@ -162,9 +167,10 @@ class DiceHandTest extends TestCase
 
 
     /**
+     * @test
      * @description Test case for DiceHand getSum() method.
      */
-    final public function testDiceHandSum(): void
+    final public function test_DiceHand_Sum(): void
     {
         /* setup test case */
         $this->diceHand->roll();
@@ -178,9 +184,10 @@ class DiceHandTest extends TestCase
 
 
     /**
+     * @test
      * @description Test case for DiceHand getAverage() method.
      */
-    final public function testDiceHandAverage(): void
+    final public function test_DiceHand_Average(): void
     {
         /* setup test case */
         $this->diceHand = new DiceHand(5, 6); // need more then 1 dice to get floats

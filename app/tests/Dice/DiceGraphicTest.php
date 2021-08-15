@@ -33,16 +33,14 @@ class DiceGraphicTest extends TestCase
 
 
     /**
+     * @test
      * @description Test DiceGraphic construct method.
      */
-    public function testDiceGraphicConstruct()
+    public function test_Dice_Graphic_Construct()
     {
         /* Test class object for namespace & type */
         $this->assertInstanceOf("daap19\Dice\DiceGraphic", $this->dice);
         $this->assertIsObject($this->dice);
-
-        /* Test class attributes existence */
-//        $this->assertClassHasStaticAttribute("SIDES", DiceGraphic::class);
 
         /* Test existence of expected class methods */
         $this->assertTrue(method_exists($this->dice, "__construct"), "Class does not have expected method __construct.");
@@ -51,9 +49,10 @@ class DiceGraphicTest extends TestCase
 
 
     /**
+     * @test
      * @description Test DiceGraphic graphicDice() method.
      */
-    public function testDiceGraphicPrintMethod()
+    public function test_Dice_Graphic_Print_Method()
     {
         /* setup test case */
         $this->dice->roll();

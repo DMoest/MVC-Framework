@@ -38,9 +38,10 @@ class YatzyPlayerTest extends TestCase
 
 
     /**
+     * @test
      * @description Test YatzyPlayer object construct method.
      */
-    final public function testYatzyPlayerConstruct(): void
+    final public function test_YatzyPlayer_Construct(): void
     {
         $this->assertIsObject($this->player);
         $this->assertInstanceOf("daap19\Yatzy\YatzyPlayer", $this->player);
@@ -74,9 +75,10 @@ class YatzyPlayerTest extends TestCase
 
 
     /**
+     * @test
      * @description Test YatzyPlayer rollDices method.
      */
-    final public function testYatzyPlayerRollDices(): void
+    final public function test_YatzyPlayer_Roll_Dices(): void
     {
         /* Setup case */
         $rolledDices = $this->player->rollDices();
@@ -88,9 +90,10 @@ class YatzyPlayerTest extends TestCase
 
 
     /**
+     * @test
      * @description Test YatzyPlayer getRolls method.
      */
-    final public function testYatzyPlayerGetRolls(): void
+    final public function test_YatzyPlayer_Get_Rolls(): void
     {
         /* Setup case */
         $this->player->rollDices();
@@ -105,9 +108,10 @@ class YatzyPlayerTest extends TestCase
 
 
     /**
+     * @test
      * @description Test YatzyPlayer method getScore.
      */
-    final public function testYatzyPlayerGetScore(): void
+    final public function test_YatzyPlayer_Get_Score(): void
     {
         /* Setup test case */
         $lastRoll = $this->player->rollDices();
@@ -120,9 +124,10 @@ class YatzyPlayerTest extends TestCase
 
 
     /**
+     * @test
      * @description Test YatzyPlayer getDiceHand method.
      */
-    final public function testYatzyPlayerGetDiceHand(): void
+    final public function test_YatzyPlayer_Get_DiceHand(): void
     {
         /* Setup case */
         $this->player->rollDices();
@@ -134,9 +139,10 @@ class YatzyPlayerTest extends TestCase
 
 
     /**
+     * @test
      * @description Test YatzyPlayer stop method.
      */
-    final public function testYatzyPlayerStop(): void
+    final public function test_YatzyPlayer_Stop(): void
     {
         /* Setup case */
         $beforeStop = $this->player->hasStopped();
@@ -152,9 +158,10 @@ class YatzyPlayerTest extends TestCase
 
 
     /**
+     * @test
      * @description Test YatzyPlayer method setForNextRound.
      */
-    final public function testYatzyPlayerSetForNextRound(): void
+    final public function test_YatzyPlayer_Set_For_Next_Round(): void
     {
         /* Setup test case */
         $lastRoll = $this->player->rollDices();

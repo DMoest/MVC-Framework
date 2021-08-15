@@ -37,9 +37,10 @@ class YatzyDiceHandTest extends TestCase
 
 
     /**
+     * @test
      * @description Test construct method for YatzyDiceHand class.
      */
-    final public function testYatzyDiceHandConstruct(): void
+    final public function test_Yatzy_Dice_Hand_Construct(): void
     {
         /* Test class object for namespace */
         $this->assertIsObject($this->diceHand);
@@ -59,9 +60,10 @@ class YatzyDiceHandTest extends TestCase
 
 
     /**
+     * @test
      * @description Test YatzyDiceHand method roll without kept dices.
      */
-    final public function testYatzyDiceHandRollNoKeep(): void
+    final public function test_Yatzy_DiceHand_Roll_No_Keep(): void
     {
         /* Setup test case */
         $lastRoll = $this->diceHand->roll();
@@ -74,9 +76,10 @@ class YatzyDiceHandTest extends TestCase
 
 
     /**
+     * @test
      * @description Test YatzyDiceHand method roll with kept dices.
      */
-    final public function testYatzyDiceHandRollKeptDices(): void
+    final public function test_Yatzy_DiceHand_Roll_Kept_Dices(): void
     {
         /* Setup test case */
         $lastRoll = $this->diceHand->roll();
@@ -102,9 +105,10 @@ class YatzyDiceHandTest extends TestCase
 
 
     /**
+     * @test
      * @description Test YatzyDiceHand method clearKeptDices.
      */
-    final public function testYatzyDiceHandClearKeptDices(): void
+    final public function test_Yatzy_DiceHand_Clear_Kept_Dices(): void
     {
         /* Setup test case */
         $lastRoll = $this->diceHand->roll();
@@ -126,9 +130,10 @@ class YatzyDiceHandTest extends TestCase
 
 
     /**
+     * @test
      * @description Test YatzyDiceHand method setForNextRound.
      */
-    final public function testYatzyDiceHandSetForNextRound(): void
+    final public function test_Yatzy_DiceHand_Set_For_Next_Round(): void
     {
         /* Setup test case */
         $lastRoll = $this->diceHand->roll();

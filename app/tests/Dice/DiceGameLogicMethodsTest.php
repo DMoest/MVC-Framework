@@ -34,9 +34,10 @@ class DiceGameLogicMethodsTest extends TestCase
 
 
     /**
+     * @test
      * @description Test DiceGame method setNextPlayerIndex.
      */
-    final public function testDiceGameSetNextRound(): void
+    final public function test_Dice_Game_Set_Next_Round(): void
     {
         $round = $this->diceGame->getRound();
 
@@ -58,9 +59,10 @@ class DiceGameLogicMethodsTest extends TestCase
 
 
     /**
+     * @test
      * @description Test DiceGame method checkScore.
      */
-    final public function testDiceGameCheckScore(): void
+    final public function test_DiceGame_Check_Score(): void
     {
         $players = $this->diceGame->getPlayers();
 
@@ -81,9 +83,10 @@ class DiceGameLogicMethodsTest extends TestCase
 
 
     /**
+     * @test
      * @description Test DiceGame method checkScore with busted player score.
      */
-    final public function testDiceGameCheckScoreBustedScore(): void
+    final public function test_DiceGame_Check_Score_Busted_Score(): void
     {
         $players = $this->diceGame->getPlayers();
         $index = $this->diceGame->getPlayerIndex();
@@ -112,9 +115,10 @@ class DiceGameLogicMethodsTest extends TestCase
 
 
     /**
+     * @test
      * @description Test DiceGame method playGame with argument "roll" from form submit. Player is not machine player.
      */
-    final public function testDiceGamePlayGameWithRollArgument(): void
+    final public function test_DiceGame_Play_Game_With_Roll_Argument(): void
     {
         /* Setup test case */
         $this->diceGame->playGame(2, "roll");
@@ -131,9 +135,10 @@ class DiceGameLogicMethodsTest extends TestCase
 
 
     /**
+     * @test
      * @description Test DiceGame method playGame with argument "stop" from form submit. Player is not machine player.
      */
-    final public function testDiceGamePlayGameWithStopArgument(): void
+    final public function test_DiceGame_Play_Game_With_Stop_Argument(): void
     {
         /* Setup test case */
         $players = $this->diceGame->getPlayers();
@@ -148,7 +153,12 @@ class DiceGameLogicMethodsTest extends TestCase
         $this->assertEmpty($results);
     }
 
-    final public function testCheckAllPlayersCredit(): void
+
+    /**
+     * @test
+     * @description Test the method checkAllPlayersCredit.
+     */
+    final public function test_Check_All_Players_Credit(): void
     {
         $players = $this->diceGame->getPlayers();
         $outOfTheGame = $this->diceGame->checkAllPlayersCredit();

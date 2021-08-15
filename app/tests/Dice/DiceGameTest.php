@@ -39,9 +39,10 @@ class DiceGameTest extends TestCase
 
 
     /**
+     * @test
      * @description Test DiceGame class construct method.
      */
-    final public function testDiceGameConstruct(): void
+    final public function test_DiceGame_Construct(): void
     {
         /* Test class namespace */
         $this->assertIsObject($this->diceGame);
@@ -69,9 +70,10 @@ class DiceGameTest extends TestCase
 
 
     /**
+     * @test
      * @description Test DiceGame class construct method without machine player. Test properties initial values on players with expectence of one player as machine on the end of players array.
      */
-    final public function testDiceGameConstructWithOutMachinePlayer(): void
+    final public function test_DiceGame_Construct_With_Out_Machine_Player(): void
     {
         /* Setup test case */
         $players = $this->diceGame->getPlayers();
@@ -109,9 +111,10 @@ class DiceGameTest extends TestCase
 
 
     /**
+     * @test
      * @description Test DiceGame method showGraphicDices.
      */
-    final public function testShowGraphicDices(): void
+    final public function test_Show_Graphic_Dices(): void
     {
         /* Setup test case */
         $index = $this->diceGame->getPlayerIndex();
@@ -128,9 +131,10 @@ class DiceGameTest extends TestCase
 
 
     /**
+     * @test
      * @description Test DiceGame method getPlayers.
      */
-    final public function testDiceGameGetPlayers(): void
+    final public function test_DiceGame_Get_Players(): void
     {
         $players = $this->diceGame->getPlayers();
 
@@ -142,9 +146,10 @@ class DiceGameTest extends TestCase
 
 
     /**
+     * @test
      * @description Test DiceGame method getPlayerIndex.
      */
-    final public function testDiceGameGetPlayerIndex(): void
+    final public function test_DiceGame_Get_Player_Index(): void
     {
         $index = $this->diceGame->getPlayerIndex();
 
@@ -154,9 +159,10 @@ class DiceGameTest extends TestCase
 
 
     /**
+     * @test
      * @description Test DiceGame method setNextPlayerIndex.
      */
-    final public function testDiceGameSetPlayerIndex(): void
+    final public function test_DiceGame_Set_Player_Index(): void
     {
         $players = $this->diceGame->getPlayers();
 
@@ -178,9 +184,10 @@ class DiceGameTest extends TestCase
 
 
     /**
+     * @test
      * @description Test DiceGame method setNextPlayerIndex.
      */
-    final public function testDiceGameGetRound(): void
+    final public function test_DiceGame_Get_Round(): void
     {
         $round = $this->diceGame->getRound();
 

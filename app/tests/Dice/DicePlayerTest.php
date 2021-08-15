@@ -34,9 +34,10 @@ class DicePlayerTest extends TestCase
 
 
     /**
+     * @test
      * @description Test DicePlayer constructor method.
      */
-    final public function testDicePlayerConstructor(): void
+    final public function test_DicePlayer_Constructor(): void
     {
         $this->assertIsObject($this->player);
         $this->assertInstanceOf("daap19\Dice\DicePlayer", $this->player);
@@ -75,9 +76,10 @@ class DicePlayerTest extends TestCase
 
 
     /**
+     * @test
      * @description Test DicePlayer getCredit method return type.
      */
-    final public function testDicePlayerGetCredit(): void
+    final public function test_DicePlayer_Get_Credit(): void
     {
         $credit = $this->player->getCredit();
         $this->assertIsInt($credit);
@@ -85,9 +87,10 @@ class DicePlayerTest extends TestCase
 
 
     /**
+     * @test
      * @description Test DicePlayer getWins method return type and value after class construct.
      */
-    final public function testDicePlayerGetWins(): void
+    final public function test_DicePlayer_Get_Wins(): void
     {
         $wins = $this->player->getWins();
         $this->assertIsInt($wins);
@@ -96,9 +99,10 @@ class DicePlayerTest extends TestCase
 
 
     /**
+     * @test
      * @description Test DicePlayer stop property after class construct.
      */
-    final public function testDicePlayerHasStopped(): void
+    final public function test_DicePlayer_Has_Stopped(): void
     {
         $stopped = $this->player->hasStopped();
         $this->assertIsBool($stopped);
@@ -107,9 +111,10 @@ class DicePlayerTest extends TestCase
 
 
     /**
+     * @test
      * @description Test DicePlayer bust property after class construct.
      */
-    final public function testDicePlayerIsBust(): void
+    final public function test_DicePlayer_Is_Bust(): void
     {
         $bust = $this->player->isBust();
         $this->assertIsBool($bust);
@@ -118,9 +123,10 @@ class DicePlayerTest extends TestCase
 
 
     /**
+     * @test
      * @description Test DicePlayer out property after class construct.
      */
-    final public function testDicePlayerIsOut(): void
+    final public function test_DicePlayer_Is_Out(): void
     {
         $out = $this->player->isOut();
         $this->assertIsBool($out);
@@ -129,9 +135,10 @@ class DicePlayerTest extends TestCase
 
 
     /**
+     * @test
      * @description Test machine operated DicePlayer after construct.
      */
-    final public function testMachineDicePlayer(): void
+    final public function test_Machine_DicePlayer(): void
     {
         $this->player = new DicePlayer(25, 1);
 
@@ -147,9 +154,10 @@ class DicePlayerTest extends TestCase
 
 
     /**
+     * @test
      * @description Test DicePlayer set for next game round method.
      */
-    final public function testPlayerSetForNextRound(): void
+    final public function test_DicePlayer_Set_For_Next_Round(): void
     {
         $this->player = new DicePlayer(25, 1);
 
@@ -196,9 +204,10 @@ class DicePlayerTest extends TestCase
     }
 
     /**
+     * @test
      * @description Test DicePlayer set for next game round method if credit is zero.
      */
-    final public function testPlayerSetForNextRoundZeroCredit(): void
+    final public function test_DicePlayer_Set_For_Next_Round_Zero_Credit(): void
     {
         $this->player = new DicePlayer(25, 1);
 
@@ -213,9 +222,10 @@ class DicePlayerTest extends TestCase
 
 
     /**
+     * @test
      * @description Test DicePlayer setWinner method and isWinner method.
      */
-    final public function testPlayerSetWinner(): void
+    final public function test_Player_Set_Winner(): void
     {
         $winner = $this->player->isWinner();
 

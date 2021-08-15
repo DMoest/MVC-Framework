@@ -37,9 +37,10 @@ class YatzyPlayerScoreHandlersTest extends TestCase
 
 
     /**
+     * @test
      * @description Test YatzyPlayer saveScores method with zero count of chosen value.
      */
-    final public function testYatzyPlayerSaveScoresNoValue(): void
+    final public function test_Yatzy_Player_Save_Scores_No_Value(): void
     {
         /* Setup case */
         $diceHand = [1, 2, 3, 4, 5];
@@ -64,9 +65,10 @@ class YatzyPlayerScoreHandlersTest extends TestCase
 
 
     /**
+     * @test
      * @description Test YatzyPlayer saveScores method.
      */
-    final public function testYatzyPlayerSaveScoresMultiplesOfDiceValue(): void
+    final public function test_Yatzy_Player_Save_Scores_Multiples_Of_Dice_Value(): void
     {
         /* Setup case */
         $diceHand = [1, 3, 3, 3, 5];
@@ -91,9 +93,10 @@ class YatzyPlayerScoreHandlersTest extends TestCase
 
 
     /**
+     * @test
      * @description Test YatzyPlayer getAmountOfSaveScores method.
      */
-    final public function testYatzyPlayerGetAmountOfSavedScores(): void
+    final public function test_Yatzy_Player_Get_Amount_Of_Saved_Scores(): void
     {
         /* Setup case */
         $diceHand = [1, 3, 3, 3, 5];
@@ -108,9 +111,10 @@ class YatzyPlayerScoreHandlersTest extends TestCase
 
 
     /**
+     * @test
      * @description Test YatzyPlayer saveScoresSum method.
      */
-    final public function testYatzyPlayerGetSavedScoresSum(): void
+    final public function test_Yatzy_Player_Get_Saved_Scores_Sum(): void
     {
         /* Setup case */
         $diceHand = [1, 4, 3, 4, 5];
@@ -125,9 +129,10 @@ class YatzyPlayerScoreHandlersTest extends TestCase
 
 
     /**
+     * @test
      * @description Test YatzyPlayer getPlayerScores method.
      */
-    final public function testYatzyPlayerGetPlayerScores(): void
+    final public function test_Yatzy_Player_Get_Player_Scores(): void
     {
         /* Setup case */
         $diceHand = $this->player->rollDices();

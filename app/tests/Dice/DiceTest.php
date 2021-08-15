@@ -34,9 +34,10 @@ class DiceTest extends TestCase
 
 
     /**
+     * @test
      * @description Test construct method for Dice class. Test instance of namespace and test default value for property faces.
      */
-    final public function testDiceConstruct(): void
+    final public function test_Dice_Construct(): void
     {
         /* Setup test case */
         $faces = $this->dice->getFaces();
@@ -70,9 +71,10 @@ class DiceTest extends TestCase
 
 
     /**
+     * @test
      * @description Test dice roll method. Test dice value for type integer.
      */
-    final public function testDiceGetFaces(): void
+    final public function test_Dice_Get_Faces(): void
     {
         /* setup test case */
         $diceFaces = $this->dice->getFaces();
@@ -84,9 +86,10 @@ class DiceTest extends TestCase
 
 
     /**
+     * @test
      * @description Test dice roll method. Test dice value for type integer.
      */
-    final public function testDiceRoll(): void
+    final public function test_Dice_Roll(): void
     {
         /* setup test case */
         $diceValue = $this->dice->roll();
@@ -97,9 +100,10 @@ class DiceTest extends TestCase
 
 
     /**
+     * @test
      * @description Test dice getLastRoll method. Test dice value for type integer.
      */
-    final public function testDiceGetLastRoll(): void
+    final public function test_Dice_Get_Last_Roll(): void
     {
         /* setup test case */
         $this->dice->roll();
@@ -111,10 +115,10 @@ class DiceTest extends TestCase
 
 
     /**
-     * @method testGetDiceResults()
+     * @test
      * @description Test dice method getDiceResults. Roll the dice three times, assert each value for type, assert dice results for type and assert each rolled value is contained i dice results.
      */
-    final public function testGetDiceResults(): void
+    final public function test_Get_Dice_Results(): void
     {
         /* setup test case */
         $diceValue1 = $this->dice->roll();
