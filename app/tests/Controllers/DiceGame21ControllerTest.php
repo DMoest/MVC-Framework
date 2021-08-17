@@ -8,12 +8,6 @@ declare(strict_types=1);
  */
 namespace Daap19\UnitTests;
 use App\Http\Controllers\DiceGame21Controller;
-use FastRoute\Route;
-use Illuminate\Http\Request;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Event;
-use Illuminate\Support\Facades\Http;
-use Illuminate\Testing\TestResponse;
 use Tests\TestCase;
 
 

@@ -21,9 +21,9 @@ class DiceGame21Controller extends Controller
 {
     /**
      * @description
-     * @return Request
+     * @return View
      */
-    public function viewInit(): Request
+    public function viewInit(): View
     {
         $data = [
             "header" => "DiceGame 21",
@@ -69,9 +69,9 @@ class DiceGame21Controller extends Controller
 
     /**
      * @description
-     * @return Application | Factory | View
+     * @return View
      */
-    final public function viewMain(): Application | Factory | View
+    final public function viewMain(): View
     {
         $diceGame = session()->get("diceGame21");
         $players = $diceGame->getPlayers();
