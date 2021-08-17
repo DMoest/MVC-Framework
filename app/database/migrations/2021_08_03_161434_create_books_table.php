@@ -13,7 +13,7 @@ class CreateBooksTable extends Migration
      */
     public function up()
     {
-        Schema::create('books', function (Blueprint $table) {
+        Schema::create('books', function(Blueprint $table) {
             $table->id()->autoIncrement();
             $table->foreignId('category_id');
             $table->foreignId('author_id');
