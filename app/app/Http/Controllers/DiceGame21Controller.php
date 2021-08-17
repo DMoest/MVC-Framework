@@ -5,6 +5,8 @@
  */
 namespace App\Http\Controllers;
 
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -19,9 +21,9 @@ class DiceGame21Controller extends Controller
 {
     /**
      * @description
-     * @return View
+     * @return Request
      */
-    final public function viewInit(): View
+    public function viewInit(): Request
     {
         $data = [
             "header" => "DiceGame 21",
@@ -42,7 +44,7 @@ class DiceGame21Controller extends Controller
      * @param Request $request
      * @return RedirectResponse
      */
-    final public function processInit(Request $request): RedirectResponse
+    public function processInit(Request $request): RedirectResponse
     {
         /* Catch POST request from dice/init/view form */
         $input = $request->all();
@@ -60,16 +62,16 @@ class DiceGame21Controller extends Controller
         $diceGame = new DiceGame21($players, $startCredit, boolval($machine));
         session()->put('diceGame21', $diceGame);
 
-        return redirect(url("/dice/view"));
+        return redirect()->route('diceMainView');
     }
 
 
 
     /**
      * @description
-     * @return View
+     * @return Application | Factory | View
      */
-    final public function viewMain(): View
+    final public function viewMain(): Application | Factory | View
     {
         $diceGame = session()->get("diceGame21");
         $players = $diceGame->getPlayers();

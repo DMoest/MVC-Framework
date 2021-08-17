@@ -8,7 +8,14 @@ declare(strict_types=1);
  */
 namespace Daap19\UnitTests;
 use App\Http\Controllers\DiceGame21Controller;
-use PHPUnit\Framework\TestCase;
+use FastRoute\Route;
+use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Event;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Testing\TestResponse;
+use Tests\TestCase;
+
 
 
 /**
@@ -54,4 +61,33 @@ class DiceGame21ControllerTest extends TestCase
         $this->assertTrue(method_exists($this->diceGame21Controller, 'processResult'));
         $this->assertTrue(method_exists($this->diceGame21Controller, 'viewFinalResult'));
     }
+
+
+//    /**
+//     * @test
+//     * @description Test request and response of DiceGame21Controller.
+//     */
+//    final public function test_DiceController_init_request_and_response(): void
+//    {
+//        $requestData = [
+//            'players' => '2',
+//            'credit' => '35',
+//            'machine' => 'true'
+//        ];
+//
+//        $stub = $this->createMock(DiceGame21Controller::class);
+//        $stub->method('viewInit')
+//            ->willReturn(Request::create('/dice/init/process', 'POST', $requestData));
+//
+//
+//        $request = $stub->viewInit();
+//        $response = $stub->processInit($request);
+//
+//
+//        $this->assertEquals('2', $request->input('players'));
+//        $this->assertEquals('35', $request->input('credit'));
+//        $this->assertEquals('true', $request->input('machine'));
+//        $response->assertRedirect('diceMainView');
+//        $response->assertStatus(302);
+//    }
 }

@@ -23,7 +23,6 @@
                 <button class="w-60 m-auto mt-6 flex flex-row justify-around p-4 bg-blue-100 border-2 border-blue-200 text-center rounded-sm uppercase font-link font-semibold hover:bg-blue-200 hover:text-white" type="submit">
                     Start game <x-icon-play class="w-4 inline-block group-hover:fill-current group-hover:text-white" /></button>
 
-
         </x-form>
     </x-section>
 </x-layout>
