@@ -6,8 +6,6 @@ use App\Models\Book;
 use App\Models\Category;
 use App\Models\Author;
 use App\Models\Publisher;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 
 
@@ -15,9 +13,9 @@ class LibraryController extends Controller
 {
     /**
      * @description Method to render view for full library.
-     * @return Application|Factory|View
+     * @return View
      */
-    final public function viewLibrary(): Application|Factory|View
+    final public function viewLibrary(): View
     {
         $data = [
             'header' => 'Daniels Library',
@@ -32,9 +30,9 @@ class LibraryController extends Controller
     /**
      * @description Method to render view for a single book.
      * @param Book $book
-     * @return Application|Factory|View
+     * @return View
      */
-    final public function viewBook(Book $book): Application|Factory|View
+    final public function viewBook(Book $book): View
     {
         return view('book', [
             'book' => $book,
@@ -45,9 +43,9 @@ class LibraryController extends Controller
     /**
      * @description Method to render view for a single book.
      * @param Category $category
-     * @return Application|Factory|View
+     * @return View
      */
-    final public function viewCategory(Category $category): Application|Factory|View
+    final public function viewCategory(Category $category): View
     {
         return view('category', [
             'category' => $category,
@@ -59,9 +57,9 @@ class LibraryController extends Controller
     /**
      * @description Methor to render view for an Author of books.
      * @param Author $author
-     * @return Application|Factory|View
+     * @return View
      */
-    final public function viewAuthor(Author $author): Application|Factory|View
+    final public function viewAuthor(Author $author): View
     {
         return view('author', [
             'author' => $author,
@@ -73,9 +71,9 @@ class LibraryController extends Controller
     /**
      * @description Method to render view for a Publisher.
      * @param Publisher $publisher
-     * @return Application|Factory|View
+     * @return View
      */
-    final public function viewPublisher(Publisher $publisher): Application|Factory|View
+    final public function viewPublisher(Publisher $publisher): View
     {
         return view('publisher', [
             'publisher' => $publisher,

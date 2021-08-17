@@ -19,7 +19,7 @@ use Tests\TestCase;
 
 
 /**
- * Test suite for the controller Session.
+ * Test suite for the controller.
  */
 class DiceGame21ControllerTest extends TestCase
 {

@@ -8,8 +8,8 @@ namespace App\Http\Controllers;
 use App\Models\HighscoreYatzy;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\View\View;
 use Daap19\Yatzy\Yatzy;
+use \Illuminate\Contracts\View\View;
 
 
 
